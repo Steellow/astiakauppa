@@ -17,13 +17,13 @@ create table users (
 );
 
 create table productgroup (
-    groupid smallint primary key auto_increment,
-    pgname char(50) not null
+    id smallint primary key auto_increment,
+    name char(50) not null
 );
 
 create table products (
-    pid integer primary key auto_increment,
-    pname char(50) not null,
+    id integer primary key auto_increment,
+    name char(50) not null,
     price decimal(5,2),
     groupid smallint not null,
     pic char(255)
