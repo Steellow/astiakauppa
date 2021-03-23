@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Products from "./components/Products";
+import SingleProductPage from "./pages/SingleProductPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -42,7 +43,8 @@ function App() {
       <div className="container">
         <Header />
         <Switch>
-          <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} />
+          <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} /> {/* Etusivu, kaikki tuotteet*/}
+          <Route path="/tuote/:title" component={SingleProductPage} />
         </Switch>
         <Footer />
       </div>
