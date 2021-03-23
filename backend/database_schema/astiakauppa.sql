@@ -1,12 +1,15 @@
 
--- copy paste xamp
-
+-- copy pasteta itselle xampp admin palvelimelle koko SQL rimpsu.
 
 drop database if exists astiakauppa;
 
 create database astiakauppa;
 
 use astiakauppa;
+
+-- password ja username valinnaisiksi, jotta voi tilata ilman rekisteröitymistä.
+-- niitä käytetään vain rekisteröitymisessä, kirjautumisessa ja
+-- rekisteröityneen asiakkaan tietojen hakemisessa tilauksen yhteydessä.
 
 create table users (
     id integer primary key auto_increment,
@@ -51,7 +54,8 @@ create table order_row (
     rownum smallint,
     productid integer,
     amount integer,
-    primary key(ordernum,rownum)
+    primary key(ordernum,rownum),
+    foreign key(productid) references product(id)
 );
 
 -- verkkokaupan omistaja
