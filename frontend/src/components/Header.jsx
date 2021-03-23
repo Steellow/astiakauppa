@@ -1,11 +1,14 @@
 import React from "react";
 import logo from "../img/arabia_logo_big.png";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <header className="row">
       <section className="col-12 text-center">
-        <img className="img-responsive text-center p-4" src={logo} alt="Logo"></img>
+        <Link to="/">
+          <img className="img-responsive text-center p-4" src={logo} alt="Logo"></img>
+        </Link>
       </section>
 
       <section className="col-12">
