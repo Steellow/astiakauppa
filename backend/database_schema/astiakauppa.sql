@@ -1,5 +1,5 @@
 
--- ei vielä valmis! jatketaan myöhemmin.
+-- copy paste xamp
 
 
 drop database if exists astiakauppa;
@@ -10,10 +10,10 @@ use astiakauppa;
 
 create table users (
     id integer primary key auto_increment,
-    username char(50) unique not null,
+    username char(50) unique,
+    password char(50),
     firstname char(50) not null,
     lastname char(50) not null,
-    password char(50) not null,
     email char(100) not null,
     address char(100) not null,
     city char(50) not null,
