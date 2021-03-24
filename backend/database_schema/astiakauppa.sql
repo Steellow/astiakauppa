@@ -61,3 +61,10 @@ create table order_row (
 -- verkkokaupan omistaja
 insert into users(username,firstname,lastname,password,email,address,city,postalcode,admin)
 values('admin', 'Jorma','Jermula','admin123','jormajermu@hotmail.com','jormankatu 12', 'Oulu', 90150, 1);
+
+-- alkuarvot testaamiseen
+insert into productgroup(name)
+values ('kupit');
+
+insert into product (name,cost,price,groupid,pic,description)
+ VALUES ('kuppi',10.50,15.50,1,'kuvalinkki','vihreä muki syvä ku mikä');
