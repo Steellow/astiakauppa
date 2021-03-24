@@ -6,7 +6,7 @@ export default function SingleProduct({ product }) {
     <div className="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
       <Link to={`/tuote/${product.title}`} style={{ color: "inherit", textDecoration: "inherit" }}>
         {/* TODO: ☝☝☝ Laita linkkiin tuotteen ID äläkä title */}
-        <div className="card h-100">
+        <div className="card">
           <img className="card-img-top p-2" src={product.img} alt="Muumimuki" />
           <div className="card-body pb-1 d-flex flex-column justify-content-between">
             <div className="card-title h4 text-uppercase">{product.title}</div>
