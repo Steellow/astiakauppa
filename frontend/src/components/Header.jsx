@@ -56,7 +56,7 @@ export default function Header() {
               </li>
               <form className="d-flex">
                 <input className="form-control me-2" type="search" placeholder="Hae" aria-label="Hae"></input>
-                <button className="btn btn-outline-light" type="submit">
+                <button className="btn btn-outline-light ml-2" type="submit">
                   Hae
                 </button>
               </form>
