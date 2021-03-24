@@ -1,7 +1,13 @@
 /* Products */
 
-.productCard {
-  padding: 2rem;
+.card-title {
+  font-weight: bold;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 15rem;
+  object-fit: scale-down;
 }
 
 /* Footer */
@@ -10,7 +16,9 @@
   padding-top: 15px;
 }
 
-.fa-facebook, .fa-instagram, .fa-twitter {
+.fa-facebook,
+.fa-instagram,
+.fa-twitter {
   padding: 10px;
   font-size: 20px;
   width: 40px;
