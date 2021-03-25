@@ -100,6 +100,23 @@ insert into product(name,cost,price,groupid,pic,description)
 values('Muumimuki: Mymmeli', 5,14.90,2,'https://arabia.fi/var/rorstrand/storage/images/frontpage/astiasarjat/muumi-muki-listaus/2008-mymmeli/listaus-listing/26148-1-fin-FI/listaus-listing.png',
 'Pirteän punakassa Arabian Muumimukissa istuu ihana ja huoleton Mymmeli. Tilavuus 0,3 l. Konepesun kestävä.');
 
+insert into product(name,cost,price,groupid,pic,description)
+values('Muumimuki: Hattivatiti',5,10.90,2,'https://arabia.fi/var/rorstrand/storage/images/frontpage/arabiasta/muumimuki-listaus/2007-hattivatit-hattifnattarna-hattifatteners/listaus-listing/26004-1-fin-FI/listaus-listing.png',
+'Hattivatit elävät laumoissa ja vaeltavat kohti taivaanrantaa. Tilavuus 0,3 l. Konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Muumimuki: Muumipappa sininen',5,14.90,2,'https://arabia.fi/var/rorstrand/storage/images/frontpage/astiasarjat/muumi-muki-listaus/2014-muumipappa-tummansininen/listaus-listing/26721-1-fin-FI/listaus-listing.png',
+'Muumipappa on poikamainen ja seikkailunhaluinen, mutta varsin ylpeä siitä, että hän on perheenpää. Tilavuus 0,3 l. Konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Muumimuki: Mörkö',5,17.90,2,'https://arabia.fi/var/rorstrand/storage/images/frontpage/astiasarjat/muumi-muki-listaus/2005-morko/listaus-listing/25858-1-fin-FI/listaus-listing.png',
+'Mörkö huokuu ympärillään kylmyyttä ja maa jäätyy hänen allaan. Tilavuus 0,3 l. Konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Muumimuki: Niiskuneiti pinkki',5,12.90,2,'https://arabia.fi/var/rorstrand/storage/images/frontpage/astiasarjat/muumi-muki-listaus/2013-niiskuneiti-pinkki-snorkfroken-rosa-snorkmaiden-pink/listaus-listing/26625-1-fin-FI/listaus-listing.png',
+'Niiskuneiti rakastaa haaveilua ja kuvittelee mielellään, millainen hänen unelmiensa prinssi olisi. Tilavuus 0,3 l. Konepesun kestävä.');
+
+
 -- lautaset
 
 insert into product(name,cost,price,groupid,pic,description)
