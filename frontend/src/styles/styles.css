@@ -52,3 +52,20 @@ ul.footer_list {
 .footer_list_fi {
   padding-bottom: 4px;
 }
+/* hide input field arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.summary {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: white;
+}

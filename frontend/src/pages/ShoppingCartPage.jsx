@@ -40,10 +40,15 @@ function ShoppingCartPage() {
   return (
     <div className="container card my-3">
       <div className="row">
-        <div className="col-9">
+        <div className="col-12">
           {products.map((product) => {
             return <ShoppingCartItem key={product.id} product={product} />;
           })}
+        </div>
+        <div className="bg-secondary col-12 justify-content-between d-flex summary">
+          <p className="d-inline-block p-3">Yhteensä</p>
+          <p className="d-inline-block p-3">666€</p>
+          <input className="my-3 btn btn-success" type="button" value="Jatka tilaukseen"/>
         </div>
       </div>
     </div>
