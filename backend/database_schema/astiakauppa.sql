@@ -116,6 +116,49 @@ insert into product(name,cost,price,groupid,pic,description)
 values('Muumimuki: Niiskuneiti pinkki',5,12.90,2,'https://arabia.fi/var/rorstrand/storage/images/frontpage/astiasarjat/muumi-muki-listaus/2013-niiskuneiti-pinkki-snorkfroken-rosa-snorkmaiden-pink/listaus-listing/26625-1-fin-FI/listaus-listing.png',
 'Niiskuneiti rakastaa haaveilua ja kuvittelee mielellään, millainen hänen unelmiensa prinssi olisi. Tilavuus 0,3 l. Konepesun kestävä.');
 
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikamuki: Taika iso Siimes',5,21.90,2,'https://iittala.scene7.com/is/image/iittala/?&src=is{iittala/iittala%2Dtaika%2Dsiimes%2Dmug%2D04l?size=3800,3800&wid=2000&hei=2000&scl=2.6}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika Siimes tuo mieleen ihanan kevätpäivän. Tilavuus 0,4 l. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikamuki: Taika iso valkoinen',5,21.90,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-mug-04_l-white?size=3800,3800&wid=2000&hei=2000&scl=2.6}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,4 l. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikamuki: Taika iso sininen',5,21.90,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-mug-04_l-blue?size=3800,3800&wid=2000&hei=2000&scl=2.6}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,4 l. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikamuki: Taika valkoinen espressokuppi',5,13.90,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-espresso-cup-01_l-white?size=3800,3800&wid=2000&hei=2000&scl=3.2}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,1 l. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikamuki: Taika sininen espressokuppi',5,13.90,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-espresso-cup-01_l-blue?size=3800,3800&wid=2000&hei=2000&scl=3.2}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,1 l. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikamuki: Taika mustavalkoinen espressokuppi',5,13.90,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-espresso-cup-01_l-black?size=3800,3800&wid=2000&hei=2000&scl=3.2}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,1 l. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikamuki: Taika Siimes kahvikuppi',5,16.50,2,'https://iittala.scene7.com/is/image/iittala/?&src=is{iittala/iittala%2Dtaika%2Dsiimes%2Dcoffee%2Dcup%2D02l?size=3800,3800&wid=2000&hei=2000&scl=2.8}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika Siimes tuo mieleen ihanan kevätpäivän. Tilavuus 0,2 l. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikamuki: Taika sininen kahvikuppi',5,16.50,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-coffee-cappucino-cup-02l-blue?size=3800,3800&wid=2000&hei=2000&scl=2.8}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,2 l. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikamuki: Taika valkoinen kahvikuppi',5,16.50,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-coffee-cappucino-cup-02l-white?size=3800,3800&wid=2000&hei=2000&scl=2.8}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,2 l. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikamuki: Taika mustavalkoinen kahvikuppi',5,16.50,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-coffee-cappucino-cup-02l-black?size=3800,3800&wid=2000&hei=2000&scl=2.8}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,2 l. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikamuki: Taika punainen kahvikuppi',5,16.50,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-coffee--cappucino-cup-02_l-red?size=3800,3800&wid=2000&hei=2000&scl=3.0}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,2 l. Mikrouunin ja konepesun kestävä.');
 
 -- lautaset
 
@@ -135,6 +178,48 @@ insert into product(name,cost,price,groupid,pic,description)
 values('Muumilautanen: syvä Mymmeli', 7,23.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/arabia-moomin-bowl-15_cm-mymble?size=3800,3800&wid=2000&hei=2000&scl=2.0}&extend=100,100,100,100',
 'Mymmeli unelmoi mielellään elämänsä rakkauden löytämisestä. Hän ihastuu usein ja haaveilee erityisesti Poliisimestarista. ⌀15cm Konepesun kestävä.');
 
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikalautanen: valkoinen 22 cm', 7,26.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-plate-22_cm-white?size=3800,3800&wid=2000&hei=2000&scl=2.2}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Valkoinen. ⌀22cm. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikalautanen: sininen 22 cm', 7,26.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-plate-22_cm-blue?size=3800,3800&wid=2000&hei=2000&scl=2.2}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Sininen. ⌀22cm. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikalautanen: mustavalkoinen 22 cm', 7,26.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-plate-22_cm-black?size=3800,3800&wid=2000&hei=2000&scl=2.2}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Mustavalkoinen. ⌀22cm. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikalautanen: punainen 22 cm', 7,26.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-plate-22_cm-red?size=3800,3800&wid=2000&hei=2000&scl=2.0}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Punainen. ⌀22cm. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikalautanen: Taika Siimes 22 cm', 7,26.90,1,'https://iittala.scene7.com/is/image/iittala/?&src=is{iittala/iittala%2Dtaika%2Dsiimes%2Dplate%2D22cm?size=3800,3800&wid=2000&hei=2000&scl=2.4}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika Siimes tuo mieleen ihanan kevätpäivän. ⌀22cm. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikalautanen: valkoinen syvä 22 cm', 7,29.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-plate-deep-22cm-deco-white?size=3800,3800&wid=2000&hei=2000&scl=2.2}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Valkoinen. Syvä ⌀22cm. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikalautanen: mustavalkoinen syvä 22 cm', 7,29.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/Iittala_Taika_plate_deep_22cm_deco_black?size=3800,3800&wid=2000&hei=2000&scl=2.2}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Mustavalkoinen. Syvä ⌀22cm. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikalautanen: Taika sininen espressovati', 7,9.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-saucer-11_cm-blue?size=3800,3800&wid=2000&hei=2000&scl=2.8}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Sininen. ⌀11cm. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikalautanen: Taika valkoinen espressovati', 7,9.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-saucer-11_cm-white?size=3800,3800&wid=2000&hei=2000&scl=2.8}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Valkoinen. ⌀11cm. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikalautanen: Taika mustavalkoinen espressovati', 7,9.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-saucer-11_cm-black?size=3800,3800&wid=2000&hei=2000&scl=2.8}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Mustavalkoinen. ⌀11cm. Mikrouunin ja konepesun kestävä.');
+
+
+
 -- lasit
 
 insert into product(name,cost,price,groupid,pic,description)
@@ -152,3 +237,7 @@ values('Muumilasi: Niiskuneiti', 3,12.90,3,'https://iittala.scene7.com/is/image/
 insert into product(name,cost,price,groupid,pic,description)
 values('Muumilasi: Muumipeikko', 3,12.90,3,'https://iittala.scene7.com/is/image/iittala/?&src=is{iittala/arabia%2Dmoomin%2Dtumbler%2D22cl%2Dmoomintroll1?size=3800,3800&wid=2000&hei=2000&scl=2.4}&extend=100,100,100,100',
 'Muumipeikko sukeltelee uteliaana vedessä. Tilavuus 22 cl. Konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikalasi: Juomalasi', 6,29.90,3,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-tumbler-38_cl-clear?size=3800,3800&wid=2000&hei=2000&scl=2.4}&extend=100,100,100,100',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 38 cl. Konepesun kestävä.');
