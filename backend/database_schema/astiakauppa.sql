@@ -80,7 +80,7 @@ values('Mukit');
 insert into productgroup(name)
 values('Lautaset');
 
---TUOTTEET
+-- TUOTTEET
 
 -- mukit
 
