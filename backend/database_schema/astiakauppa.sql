@@ -63,11 +63,11 @@ insert into users(username,firstname,lastname,password,email,address,city,postal
 values('admin', 'Jorma','Jermula','admin123','jormajermu@hotmail.com','jormankatu 12', 'Oulu', 90150, 1);
 
 -- alkuarvot testaamiseen
-insert into productgroup(name)
-values ('kupit');
+-- insert into productgroup(name)
+-- values ('kupit');
 
-insert into product (name,cost,price,groupid,pic,description)
- VALUES ('kuppi',10.50,15.50,1,'kuvalinkki','vihreä muki syvä ku mikä');
+-- insert into product (name,cost,price,groupid,pic,description)
+-- VALUES ('kuppi',10.50,15.50,1,'kuvalinkki','vihreä muki syvä ku mikä');
 
  -- tuoteryhmät
 
@@ -78,9 +78,9 @@ insert into productgroup(name)
 values('Mukit');
 
 insert into productgroup(name)
-values('Lautaset');
+values('Lasit');
 
---TUOTTEET
+-- TUOTTEET
 
 -- mukit
 
@@ -101,7 +101,7 @@ values('Muumimuki: Mymmeli', 5,14.90,2,'https://arabia.fi/var/rorstrand/storage/
 'Pirteän punakassa Arabian Muumimukissa istuu ihana ja huoleton Mymmeli. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Hattivatiti',5,10.90,2,'https://arabia.fi/var/rorstrand/storage/images/frontpage/arabiasta/muumimuki-listaus/2007-hattivatit-hattifnattarna-hattifatteners/listaus-listing/26004-1-fin-FI/listaus-listing.png',
+values('Muumimuki: Hattivatti',5,10.90,2,'https://arabia.fi/var/rorstrand/storage/images/frontpage/arabiasta/muumimuki-listaus/2007-hattivatit-hattifnattarna-hattifatteners/listaus-listing/26004-1-fin-FI/listaus-listing.png',
 'Hattivatit elävät laumoissa ja vaeltavat kohti taivaanrantaa. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
