@@ -4,6 +4,7 @@ import Products from "./components/Products";
 import SingleProductPage from "./pages/SingleProductPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import ShoppingCartPage from "./pages/ShoppingCartPage";
 
 function App() {
   const [allProducts, setItems] = useState([]);
@@ -37,6 +38,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} />
+          <Route path="/ostoskori" component={ShoppingCartPage} />
           <Route
             path="/lautaset"
             render={(props) => <Products products={allProducts.filter((prod) => Number(prod.groupid) === Number(1))} {...props} />}
