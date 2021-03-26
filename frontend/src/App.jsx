@@ -3,72 +3,53 @@ import Footer from "./components/Footer";
 import Products from "./components/Products";
 import SingleProductPage from "./pages/SingleProductPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import {useState,useEffect} from 'react';
+import { useState, useEffect } from "react";
 
-const URL = 'http://localhost/astiakauppa/';
 function App() {
-  const [allProducts,setItems] = useState([]);
-  
+  const [allProducts, setItems] = useState([]);
+
+  const URL = "http://localhost/astiakauppa/";
+
   let status = 0;
   useEffect(() => {
-    fetch(URL + 'retrieve.php')
-    .then(response => {
-      status = parseInt(response.status);
-      return response.json();
-    })
-    .then (
-      (response) => {
-        if (status === 200) {
-          setItems(response);
-        } else {
-          alert(response.error);
+    fetch(URL + "retrieve.php")
+      .then((response) => {
+        status = parseInt(response.status);
+        return response.json();
+      })
+      .then(
+        (response) => {
+          if (status === 200) {
+            setItems(response);
+          } else {
+            alert(response.error);
+          }
+        },
+        (error) => {
+          alert(error);
         }
-        
-      }, (error) => {
-        alert(error);
-      }
-    )
-  }, [])
-  // const allProducts = [
-  //   {
-  //     img: "https://www.finmug.fi/WebRoot/vilkasfi03/Shops/2018071202/5CC2/DB1F/DD4B/3035/48EA/0A28/1011/5793/Muumimuki_iltauinti_2.1.jpeg",
-  //     title: "MUUMIMUKI",
-  //     desc: "ASDFASDFASDFASDF",
-  //     price: 345,
-  //   },
-  //   {
-  //     img: "https://www.finmug.fi/WebRoot/vilkasfi03/Shops/2018071202/5CC2/DB1F/DD4B/3035/48EA/0A28/1011/5793/Muumimuki_iltauinti_2.1.jpeg",
-  //     title: "MUUMIMUKI",
-  //     desc: "ASDFASDFASDFASDF",
-  //     price: 345,
-  //   },
-  //   {
-  //     img: "https://www.finmug.fi/WebRoot/vilkasfi03/Shops/2018071202/5CC2/DB1F/DD4B/3035/48EA/0A28/1011/5793/Muumimuki_iltauinti_2.1.jpeg",
-  //     title: "MUUMIMUKI",
-  //     desc: "ASDFASDFASDFASDF",
-  //     price: 345,
-  //   },
-  //   {
-  //     img: "https://www.finmug.fi/WebRoot/vilkasfi03/Shops/2018071202/5CC2/DB1F/DD4B/3035/48EA/0A28/1011/5793/Muumimuki_iltauinti_2.1.jpeg",
-  //     title: "MUUMIMUKI",
-  //     desc: "ASDFASDFASDFASDF",
-  //     price: 345,
-  //   },
-  //   {
-  //     img: "https://www.finmug.fi/WebRoot/vilkasfi03/Shops/2018071202/5CC2/DB1F/DD4B/3035/48EA/0A28/1011/5793/Muumimuki_iltauinti_2.1.jpeg",
-  //     title: "MUUMIMUKI",
-  //     desc: "ASDFASDFASDFASDF",
-  //     price: 345,
-  //   },
-  // ];
-  
+      );
+  }, []);
+
   return (
     <Router>
       <div className="container">
         <Header />
         <Switch>
-          <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} /> {/* Etusivu, kaikki tuotteet*/}
-          <Route path="/tuote/:title" component={SingleProductPage} />
+          <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} />
+          <Route
+            path="/lautaset"
+            render={(props) => <Products products={allProducts.filter((prod) => Number(prod.groupid) === Number(1))} {...props} />}
+          />
+          <Route
+            path="/mukit"
+            render={(props) => <Products products={allProducts.filter((prod) => Number(prod.groupid) === Number(2))} {...props} />}
+          />
+          <Route
+            path="/lasit"
+            render={(props) => <Products products={allProducts.filter((prod) => Number(prod.groupid) === Number(3))} {...props} />}
+          />
+          <Route path="/tuote/:id" component={SingleProductPage} />
         </Switch>
         <Footer />
       </div>
