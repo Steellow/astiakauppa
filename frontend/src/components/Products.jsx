@@ -6,7 +6,6 @@ export default function Products({ products }) {
     <div className="container">
       <div className="row">
         {products.map((product) => {
-          // KEKSI  KEY TUOTTEILLE
           return <SingleProduct key={product.id} product={product} />;
         })}
       </div>
