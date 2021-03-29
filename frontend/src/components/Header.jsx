@@ -49,7 +49,17 @@ export default function Header({search}) {
                 </Link>
               </li>
             </ul>
-            <ul className="nav navbar-nav navbar-collapse flex-fill w-100 justify-content-end">
+            {/* Alustava pohja */}
+            <div className="display-flex">
+            <button className="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">
+              Lajittele</button>
+              <ul class="dropdown-menu">
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+              </ul>
+            </div>            
+            <ul className="nav navbar-nav navbar-collapse flex-fill w-50 justify-content-end">
               <li className="nav-item">
                 <a href="/ostoskori" className="nav-link" style={{ color: "white" }}>
                   <i className="fa fa-lg fa-shopping-cart"></i>
