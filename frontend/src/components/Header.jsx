@@ -1,8 +1,14 @@
-import React from "react";
+import React,{useState} from "react";
 import logo from "../img/arabia_logo_big.png";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header({search}) {
+  const [criteria, setCriteria] = useState('');
+
+    function doSearch(e) {
+        e.preventDefault();
+        search(criteria);
+    }
   return (
     <header className="row">
       <section className="col-12 text-center">
@@ -34,12 +40,12 @@ export default function Header() {
               </li>
               <li className="nav-item">
                 <Link to="/mukit" className="nav-link">
-                  Lautaset
+                  Mukit
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/lasit" className="nav-link">
-                  Lautaset
+                  Lasit
                 </Link>
               </li>
             </ul>
@@ -49,8 +55,8 @@ export default function Header() {
                   <i className="fa fa-lg fa-shopping-cart"></i>
                 </Link>
               </li>
-              <form className="d-flex">
-                <input className="form-control me-2" type="search" placeholder="Hae" aria-label="Hae"></input>
+              <form onSubmit={doSearch} className="d-flex">
+                <input className="form-control me-2" type="search" placeholder="Hae" aria-label="Hae" value={criteria} onChange={e => setCriteria(e.target.value)}></input>
                 <button className="btn btn-outline-light ml-2" type="submit">
                   Hae
                 </button>

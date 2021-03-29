@@ -5,6 +5,7 @@ import SingleProductPage from "./pages/SingleProductPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
+import OrderingPage from "./pages/OrderingPage";
 
 function App() {
   const [allProducts, setItems] = useState([]);
@@ -13,8 +14,23 @@ function App() {
   const URL = "http://localhost/astiakauppa/";
 
   let status = 0;
+
+  const [searchCriteria,setSearchCriteria] = useState(null);
+
+  function search(criteria) {
+    // console.log(criteria);
+    setSearchCriteria(criteria);
+    
+  }
+  
   useEffect(() => {
-    fetch(URL + "retrieve.php")
+
+    let address = URL + 'retrieve.php';
+    // console.log (searchCriteria);
+    if (searchCriteria !=null) {
+        address = URL + 'search.php/?criteria=' + searchCriteria;
+    }
+    fetch(address)
       .then((response) => {
         status = parseInt(response.status);
         return response.json();
@@ -31,7 +47,7 @@ function App() {
           alert(error);
         }
       );
-  }, []);
+  }, [searchCriteria]);
 
   const addToCart = (product) => {
     setShoppingCart(shoppingCart.concat(product));
@@ -40,10 +56,11 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <Header />
+        <Header search={search}/>
         <Switch>
           <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} />
           <Route path="/ostoskori" component={ShoppingCartPage} />
+          <Route path="/tilaussivu" component={OrderingPage} />
           <Route
             path="/lautaset"
             render={(props) => <Products products={allProducts.filter((prod) => Number(prod.groupid) === Number(1))} {...props} />}
