@@ -40,12 +40,12 @@ export default function Header({search}) {
               </li>
               <li className="nav-item">
                 <Link to="/mukit" className="nav-link">
-                  Lautaset
+                  Mukit
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/lasit" className="nav-link">
-                  Lautaset
+                  Lasit
                 </Link>
               </li>
             </ul>

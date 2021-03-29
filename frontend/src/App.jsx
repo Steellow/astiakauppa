@@ -17,7 +17,7 @@ function App() {
   const [searchCriteria,setSearchCriteria] = useState(null);
 
   function search(criteria) {
-    console.log(criteria);
+    // console.log(criteria);
     setSearchCriteria(criteria);
     
   }
@@ -25,8 +25,8 @@ function App() {
   useEffect(() => {
 
     let address = URL + 'retrieve.php';
-    console.log (searchCriteria);
-    if (searchCriteria != null) {
+    // console.log (searchCriteria);
+    if (searchCriteria !=null) {
         address = URL + 'search.php/?criteria=' + searchCriteria;
     }
     fetch(address)
