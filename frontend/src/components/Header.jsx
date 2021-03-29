@@ -61,9 +61,9 @@ export default function Header({search}) {
             </div>            
             <ul className="nav navbar-nav navbar-collapse flex-fill w-50 justify-content-end">
               <li className="nav-item">
-                <a href="/ostoskori" className="nav-link" style={{ color: "white" }}>
+                <Link to="/ostoskori" className="nav-link" style={{ color: "white" }}>
                   <i className="fa fa-lg fa-shopping-cart"></i>
-                </a>
+                </Link>
               </li>
               <form onSubmit={doSearch} className="d-flex">
                 <input className="form-control me-2" type="search" placeholder="Hae" aria-label="Hae" value={criteria} onChange={e => setCriteria(e.target.value)}></input>
