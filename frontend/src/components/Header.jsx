@@ -34,24 +34,19 @@ export default function Header({search}) {
           <div className="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
             <ul className="nav navbar-nav navbar-collapse flex-fill w-100 flex-nowrap">
               <li className="nav-item">
-                <a className="nav-link" href="/lautaset">
+                <Link to="/lautaset" className="nav-link">
                   Lautaset
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/mukit">
-                  Mukit
-                </a>
+                <Link to="/mukit" className="nav-link">
+                  Lautaset
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/lasit">
-                  Lasit
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Tuotesarjat
-                </a>
+                <Link to="/lasit" className="nav-link">
+                  Lautaset
+                </Link>
               </li>
             </ul>
             <ul className="nav navbar-nav navbar-collapse flex-fill w-100 justify-content-end">

@@ -1,5 +1,7 @@
 import React from "react";
 import ShoppingCartItem from "../components/ShoppingCartItem";
+import { Link } from "react-router-dom";
+
 
 function ShoppingCartPage() {
   const products = [
@@ -48,7 +50,8 @@ function ShoppingCartPage() {
         <div className="bg-secondary col-12 justify-content-between d-flex summary">
           <p className="d-inline-block p-3">Yhteensä</p>
           <p className="d-inline-block p-3">666€</p>
-          <input className="my-3 btn btn-success" type="button" value="Jatka tilaukseen"/>
+          <Link to="/tilaussivu" className="my-3 btn btn-success pt-3" type="button">Jatka tilaukseen
+          </Link>
         </div>
       </div>
     </div>
