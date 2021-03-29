@@ -8,6 +8,7 @@ import ShoppingCartPage from "./pages/ShoppingCartPage";
 
 function App() {
   const [allProducts, setItems] = useState([]);
+  const [shoppingCart, setShoppingCart] = useState([]);
 
   const URL = "http://localhost/astiakauppa/";
 
@@ -32,6 +33,10 @@ function App() {
       );
   }, []);
 
+  const addToCart = (product) => {
+    setShoppingCart(shoppingCart.concat(product));
+  };
+
   return (
     <Router>
       <div className="container">
@@ -51,7 +56,8 @@ function App() {
             path="/lasit"
             render={(props) => <Products products={allProducts.filter((prod) => Number(prod.groupid) === Number(3))} {...props} />}
           />
-          <Route path="/tuote/:id" component={SingleProductPage} />
+          <Route path="/tuote/:id" render={(props) => <SingleProductPage addToCart={addToCart} {...props} />} />
+          {/* <Route path="/tuote/:id" component={SingleProductPage} /> */}
         </Switch>
         <Footer />
       </div>
