@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 export default function LogIn() {
 
   return(
-        <div className="card col-12 col-md-5 login-card p-4 ml-5 mt-2 mb-2 hv-center">
-            <form>
-                <h4>Kirjaudu sisään</h4>
-                <div className="form-group text-left">
+    <div className="card col-12 col-md-5 login-card p-4 ml-5 mt-2 mb-2 hv-center">
+        <form>
+            <h4>Kirjaudu sisään</h4>
+            <div className="form-group text-left">
                 <label htmlFor="exampleInputEmail1">Sähköposti</label>
                 <input type="email" 
                        className="form-control" 
@@ -33,10 +33,11 @@ export default function LogIn() {
                     type="submit" 
                     className="btn btn-primary">
                     Kirjaudu
-          </button>
-          <small id="Rekisteröidy" className="form-text text-muted">Etkö ole vielä asiakas? <Link to="/rekisteri">Rekisteröidy tästä
-          </Link></small>
+                </button>
+                <small id="Rekisteröidy" className="form-text text-muted">Etkö ole vielä asiakas? <Link to="/rekisteri">Rekisteröidy tästä
+                </Link></small>
             </form>
         </div>
+        
     )
 }

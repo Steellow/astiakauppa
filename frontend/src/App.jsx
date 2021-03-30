@@ -63,7 +63,7 @@ function App() {
           <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} />
           <Route path="/ostoskori" component={ShoppingCartPage} />
           <Route path="/kirjaudu" component={LogInPage} />
-          <Route path="/rekisteroidy" component={RegistrationForm} />
+          <Route path="/rekisteri" component={RegistrationForm} />
           <Route path="/checkout" component={CheckOutPage} />
           <Route
             path="/lautaset"

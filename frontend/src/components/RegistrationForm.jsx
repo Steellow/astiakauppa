@@ -12,8 +12,8 @@ export default function RegistrationForm() {
                        id="email" 
                        aria-describedby="emailHelp" 
                        placeholder="Enter email" 
-                       value={state.email}
-                       onChange={handleChange}
+                    //    value={state.email}
+                    //    onChange={handleChange}
                 />
                 <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
@@ -23,8 +23,8 @@ export default function RegistrationForm() {
                         className="form-control" 
                         id="password" 
                         placeholder="Password"
-                        value={state.password}
-                        onChange={handleChange} 
+                        // value={state.password}
+                        // onChange={handleChange} 
                     />
                 </div>
                 <div className="form-group text-left">
