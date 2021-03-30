@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-
 export default function LogIn() {
 
   return(
-    <div className="card col-12 col-md-5 login-card p-4 ml-5 mt-2 mb-2 hv-center">
+    <div className="card col-12 col-md-5 login-card p-4 ml-5 mt-2 mb-5">
         <form>
             <h4>Kirjaudu sisään</h4>
             <div className="form-group text-left">
-                <label htmlFor="exampleInputEmail1">Sähköposti</label>
+                <label htmlFor="InputEmail">Sähköposti</label>
                 <input type="email" 
                        className="form-control" 
                        id="email" 
