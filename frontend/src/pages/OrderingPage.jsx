@@ -32,7 +32,7 @@ export default function OrderingPage() {
         </label>
         
 
-        {/* Maksutavan aloitus */}
+        {/* Maksutavan aloitus
             <div classname="container card my-3">
                 <div classname="row">
                   <div classname="col-12">
@@ -59,10 +59,10 @@ export default function OrderingPage() {
                       </label>
                 </div>
                 </div>
-            </div>
+            </div> */}
+      </form>
 
-
-        </form>
+       
     );
     
 }
