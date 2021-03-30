@@ -50,7 +50,7 @@ function ShoppingCartPage() {
         <div className="bg-secondary col-12 justify-content-between d-flex summary">
           <p className="d-inline-block p-3">Yhteensä</p>
           <p className="d-inline-block p-3">666€</p>
-          <Link to="/tilaussivu" className="my-3 btn btn-success pt-3" type="button">Jatka tilaukseen
+          <Link to="/kirjaudu" className="my-3 btn btn-success pt-3" type="button">Jatka tilaukseen
           </Link>
         </div>
       </div>
