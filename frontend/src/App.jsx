@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import LogInPage from "./pages/LogInPage";
 import RegistrationForm from "./components/RegistrationForm";
-import CheckOut from "./pages/CheckOut";
+import CheckOutPage from "./pages/CheckOutPage";
 
 function App() {
   const [allProducts, setItems] = useState([]);
@@ -64,7 +64,7 @@ function App() {
           <Route path="/ostoskori" component={ShoppingCartPage} />
           <Route path="/kirjaudu" component={LogInPage} />
           <Route path="/rekisteroidy" component={RegistrationForm} />
-          <Route path="/checkout" component={CheckOut} />
+          <Route path="/checkout" component={CheckOutPage} />
           <Route
             path="/lautaset"
             render={(props) => <Products products={allProducts.filter((prod) => Number(prod.groupid) === Number(1))} {...props} />}
