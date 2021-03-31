@@ -9,9 +9,9 @@ export default function Footer() {
       <div className="col-sm-12, col-md-3 text-white">
         <ul className="footer_list">
           <li className="footer_list_fi">Ota yhteyttä</li>
-          <li>puhelinnumero</li>
-          <li>sähköpostiosoite</li>
-          <li>osoite</li>
+          <li>Jorma Jermula</li>
+          <li>jormajermu@hotmail.com</li>
+          <li>Jormankatu 24</li>
         </ul>
       </div>
       <p className="col-sm-12, col-md-3 text-white">
@@ -26,7 +26,6 @@ export default function Footer() {
           <i className="fa fa-twitter"></i>
         </a>
       </p>
-      <p className="col-sm-12, col-md-6 text-white">Tekstiä...</p>
       <p className="col-12 text-center bg-secondary text-white">
         Hannes Kinnunen | Aleksi Ervasti | Milla Viitapohja | Sanni Ristimella | Arttu Heikkinen
       </p>
