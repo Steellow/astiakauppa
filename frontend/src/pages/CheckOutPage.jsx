@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import shoppingCart from "../util/ShoppingCart";
 
 
 export default function CheckOutPage() {
+  const [items] = useState(shoppingCart.getItems());
+  const [total, setTotal] = useState(0);
+
+
+  const calcTotal = () => {
+    let i = 0;
+    for (let ii = 0; ii < items.length; ii++) {
+      const item = items[ii];
+      i += item.amount * item.product.price;
+    }
+    setTotal(i);
+  };
+
+  useEffect(() => {
+    calcTotal();
+  }, [items]);
+
   return (
     <div className="row">
-      <div className="row col-12 m-3">
-        <h3>1. Asiakastiedot</h3>
-      <div className="card col-12 login-card p-4 mt-2 mb-2 hv-center">
+      <div className="row col-12 m-1">
+        <h3 className="p-2">1. Asiakastiedot</h3>
+      <div className="card col-12 pt-3">
       <form>
+        <div className="form-group col-md-6">
       <div className="form-row">
         <div className="form-group">
           <label for="inputFname">Etunimi*</label>
@@ -27,7 +46,7 @@ export default function CheckOutPage() {
         </div>
       </div>
         <div className="form-row">
-        <div className="form-group col-md-6">
+        <div className="form-group col-12">
           <label for="inputEmail">Sähköposti*</label>
           <input  type="email" 
                   className="form-control" 
@@ -39,7 +58,7 @@ export default function CheckOutPage() {
         <div className="form-group">
             <label for="inputAddress">Osoite*</label>
             <input  type="text" 
-                    className="form-control col-md-6" 
+                    className="form-control col-12" 
                     id="inputAddress" 
                     placeholder="Katuosoite ja talonnumero"
               />
@@ -61,11 +80,22 @@ export default function CheckOutPage() {
                     placeholder="33100"
             />
         </div>
-      </div>
-        <button type="submit" className="btn btn-primary">Jatka toimitukseen</button>
+      </div>     
+        <button type="submit" className="btn btn-success">Jatka toimitukseen</button>
+        </div>
       </form>
+      <div className="row pt-2">
+        <div className="bg-secondary col-12 justify-content-between d-flex summary">
+          <p>Yhteensä</p>
+          <p>{total}€</p>          
+        </div>
       </div>
       </div>
+      
+        
+      </div>
+      
     </div>
+    
   );
 }
