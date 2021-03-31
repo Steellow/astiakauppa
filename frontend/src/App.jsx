@@ -9,26 +9,22 @@ import OrderingPage from "./pages/OrderingPage";
 
 function App() {
   const [allProducts, setItems] = useState([]);
-  const [shoppingCart, setShoppingCart] = useState([]);
+  const [searchCriteria, setSearchCriteria] = useState(null);
 
   const URL = "http://localhost/astiakauppa/";
 
   let status = 0;
 
-  const [searchCriteria,setSearchCriteria] = useState(null);
-
   function search(criteria) {
     // console.log(criteria);
     setSearchCriteria(criteria);
-    
   }
-  
-  useEffect(() => {
 
-    let address = URL + 'retrieve.php';
+  useEffect(() => {
+    let address = URL + "retrieve.php";
     // console.log (searchCriteria);
-    if (searchCriteria !=null) {
-        address = URL + 'search.php/?criteria=' + searchCriteria;
+    if (searchCriteria != null) {
+      address = URL + "search.php/?criteria=" + searchCriteria;
     }
     fetch(address)
       .then((response) => {
@@ -49,14 +45,10 @@ function App() {
       );
   }, [searchCriteria]);
 
-  const addToCart = (product) => {
-    setShoppingCart(shoppingCart.concat(product));
-  };
-
   return (
     <Router>
       <div className="container">
-        <Header search={search}/>
+        <Header search={search} />
         <Switch>
           <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} />
           <Route path="/ostoskori" component={ShoppingCartPage} />
@@ -73,8 +65,7 @@ function App() {
             path="/lasit"
             render={(props) => <Products products={allProducts.filter((prod) => Number(prod.groupid) === Number(3))} {...props} />}
           />
-          <Route path="/tuote/:id" render={(props) => <SingleProductPage addToCart={addToCart} {...props} />} />
-          {/* <Route path="/tuote/:id" component={SingleProductPage} /> */}
+          <Route path="/tuote/:id" component={SingleProductPage} />
         </Switch>
         <Footer />
       </div>
