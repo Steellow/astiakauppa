@@ -38,7 +38,7 @@ function ShoppingCartPage() {
           <p className="d-inline-block p-3">Yhteensä</p>
           <p className="d-inline-block p-3">{total}€</p>
           {/* TODO: update total sum on item add/remove without refreshing page */}
-          <Link to="/tilaussivu" className="my-3 btn btn-success pt-3" type="button">
+          <Link to="/kirjaudu" className="my-3 btn btn-success pt-3" type="button">
             Jatka tilaukseen
           </Link>
         </div>
