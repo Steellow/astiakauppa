@@ -6,7 +6,7 @@ import styles from "../styles/styles.css";
 export default function Footer() {
   return (
     <footer className="footer row bg-dark">
-      <div className="col-sm-12, col-md-3 text-white">
+      <div className="col-6 text-white">
         <ul className="footer_list">
           <li className="footer_list_fi">Ota yhteyttä</li>
           <li>Jorma Jermula</li>
@@ -14,7 +14,7 @@ export default function Footer() {
           <li>Jormankatu 24</li>
         </ul>
       </div>
-      <p className="col-sm-12, col-md-3 text-white">
+      <p className="col-6 text-white">
         Seuraa meitä somessa <br />
         <a href="https://fi-fi.facebook.com/" target="1">
           <i className="fa fa-facebook"></i>
