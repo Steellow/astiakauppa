@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function RegistrationForm() {
+export default function RegistrationPage() {
 
   return(
       <div className="row d-flex justify-content-center">
@@ -86,7 +86,7 @@ export default function RegistrationForm() {
                 </div>
                  <button 
                     type="submit" 
-                    className="btn btn-primary">
+                    className="btn btn-success">
                     Rekisteröidy
           </button>
             </form>

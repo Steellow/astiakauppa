@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import LogInPage from "./pages/LogInPage";
-import RegistrationForm from "./components/RegistrationForm";
+import RegistrationPage from "./pages/RegistrationPage";
 import CheckOutPage from "./pages/CheckOutPage";
 
 function App() {
@@ -55,7 +55,7 @@ function App() {
           <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} />
           <Route path="/ostoskori" component={ShoppingCartPage} />
           <Route path="/kirjaudu" component={LogInPage} />
-          <Route path="/rekisteri" component={RegistrationForm} />
+          <Route path="/rekisteri" component={RegistrationPage} />
           <Route path="/checkout" component={CheckOutPage} />
           <Route
             path="/lautaset"
