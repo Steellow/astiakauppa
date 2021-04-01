@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../img/arabia_logo_big.png";
+import logo from "../img/logo.png";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown.jsx";
 
@@ -14,7 +14,7 @@ export default function Header({ search }) {
     <header className="row">
       <section className="col-12 text-center">
         <Link to="/">
-          <img className="img-responsive text-center p-4" src={logo} alt="Logo"></img>
+          <img className="img-responsive text-center p-4 col-3" src={logo} alt="Logo"></img>
         </Link>
       </section>
 
