@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
 import shoppingCart from "../util/ShoppingCart";
-import ShoppingCartItem from "../components/ShoppingCartItem";
 
 
 export default function CheckOutPage(item) {
   const [items] = useState(shoppingCart.getItems());
   const [total, setTotal] = useState(0);
-  const product = item.product;
 
   const calcTotal = useCallback(() => {
     let i = 0;
@@ -135,7 +133,7 @@ export default function CheckOutPage(item) {
                 <ul class="list-group mb-3 sticky-top">
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                            <h6 class="my-0">{product.name}</h6>
+                            <h6 class="my-0">Tuotteen nimi</h6>
                             <small class="text-muted">Tuotteen lyhyt kuvaus</small>
                         </div>
                         <span class="text-muted">12.90 €</span>
