@@ -28,11 +28,7 @@ export default function LogIn() {
                         // onChange={handleChange} 
                     />
                 </div>
-                 <button 
-                    type="submit" 
-                    className="btn btn-primary">
-                    Kirjaudu
-                </button>
+                 <button type="submit" className="btn btn-success">Kirjaudu</button>
                 <small id="Rekisteröidy" className="form-text text-muted">Etkö ole vielä asiakas? <Link to="/rekisteri">Rekisteröidy tästä
                 </Link></small>
             </form>

@@ -39,7 +39,7 @@ function ShoppingCartPage() {
         <div className="bg-dark col-12 justify-content-between d-flex summary align-middle">
           <p className="d-inline-block m-4">Yhteensä</p>
           <p className="d-inline-block m-4">{total.toFixed(2)}€</p>
-          <Link to="/tilaussivu" className="my-3 btn btn-success pt-3" type="button">
+          <Link to="/kirjaudu" className="my-3 btn btn-success pt-3" type="button">
             Jatka tilaukseen
           </Link>
         </div>
