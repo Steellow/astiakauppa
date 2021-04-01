@@ -95,11 +95,6 @@ export default function CheckOutPage() {
       </div>
       
     </div>
-<<<<<<< HEAD
-  );
-}
-=======
     
   );
 }
->>>>>>> 86d9f33c9923ec8453447b3261e0c0e0fd5a76dd
