@@ -31,13 +31,14 @@ function ShoppingCartPage() {
       <div className="row">
         <div className="col-12">
           {items.map((item) => {
-            return <ShoppingCartItem key={item.product.id} item={item} handleRemove={handleRemove} callBack={calcTotal} />;
+            return (
+              <ShoppingCartItem key={item.product.id} item={item} handleRemove={handleRemove} callBack={() => setItems(shoppingCart.getItems)} />
+            );
           })}
         </div>
-        <div className="bg-secondary col-12 justify-content-between d-flex summary">
-          <p className="d-inline-block p-3">Yhteensä</p>
-          <p className="d-inline-block p-3">{total}€</p>
-          {/* TODO: update total sum on item add/remove without refreshing page */}
+        <div className="bg-dark col-12 justify-content-between d-flex summary align-middle">
+          <p className="d-inline-block m-4">Yhteensä</p>
+          <p className="d-inline-block m-4">{total.toFixed(2)}€</p>
           <Link to="/tilaussivu" className="my-3 btn btn-success pt-3" type="button">
             Jatka tilaukseen
           </Link>
