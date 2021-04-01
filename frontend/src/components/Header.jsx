@@ -1,14 +1,14 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import logo from "../img/arabia_logo_big.png";
 import { Link } from "react-router-dom";
 
-export default function Header({search}) {
-  const [criteria, setCriteria] = useState('');
+export default function Header({ search }) {
+  const [criteria, setCriteria] = useState("");
 
-    function doSearch(e) {
-        e.preventDefault();
-        search(criteria);
-    }
+  function doSearch(e) {
+    e.preventDefault();
+    search(criteria);
+  }
   return (
     <header className="row">
       <section className="col-12 text-center">
@@ -51,14 +51,21 @@ export default function Header({search}) {
             </ul>
             {/* Alustava pohja */}
             <div className="display-flex">
-            <button className="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">
-              Lajittele</button>
-              <ul class="dropdown-menu">
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
+              <button className="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">
+                Lajittele
+              </button>
+              <ul className="dropdown-menu">
+                <li>
+                  <a href="#"></a>
+                </li>
+                <li>
+                  <a href="#"></a>
+                </li>
+                <li>
+                  <a href="#"></a>
+                </li>
               </ul>
-            </div>            
+            </div>
             <ul className="nav navbar-nav navbar-collapse flex-fill w-50 justify-content-end">
               <li className="nav-item">
                 <Link to="/ostoskori" className="nav-link" style={{ color: "white" }}>
@@ -66,7 +73,14 @@ export default function Header({search}) {
                 </Link>
               </li>
               <form onSubmit={doSearch} className="d-flex">
-                <input className="form-control me-2" type="search" placeholder="Hae" aria-label="Hae" value={criteria} onChange={e => setCriteria(e.target.value)}></input>
+                <input
+                  className="form-control me-2"
+                  type="search"
+                  placeholder="Hae"
+                  aria-label="Hae"
+                  value={criteria}
+                  onChange={(e) => setCriteria(e.target.value)}
+                ></input>
                 <button className="btn btn-outline-light ml-2" type="submit">
                   Hae
                 </button>
