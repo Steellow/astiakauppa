@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../img/arabia_logo_big.png";
 import { Link } from "react-router-dom";
+import Dropdown from "./Dropdown.jsx";
 
 export default function Header({ search }) {
   const [criteria, setCriteria] = useState("");
@@ -49,23 +50,7 @@ export default function Header({ search }) {
                 </Link>
               </li>
             </ul>
-            {/* Alustava pohja */}
-            <div className="display-flex">
-              <button className="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">
-                Lajittele
-              </button>
-              <ul className="dropdown-menu">
-                <li>
-                  <a href="#"></a>
-                </li>
-                <li>
-                  <a href="#"></a>
-                </li>
-                <li>
-                  <a href="#"></a>
-                </li>
-              </ul>
-            </div>
+            <Dropdown /> 
             <ul className="nav navbar-nav navbar-collapse flex-fill w-50 justify-content-end">
               <li className="nav-item">
                 <Link to="/ostoskori" className="nav-link" style={{ color: "white" }}>
