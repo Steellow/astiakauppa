@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import ShoppingCartItem from "../components/ShoppingCartItem";
 import { Link } from "react-router-dom";
 import shoppingCart from "../util/ShoppingCart";
@@ -13,18 +13,18 @@ function ShoppingCartPage() {
     calcTotal();
   };
 
-  const calcTotal = () => {
+  const calcTotal = useCallback(() => {
     let i = 0;
     for (let ii = 0; ii < items.length; ii++) {
       const item = items[ii];
       i += item.amount * item.product.price;
     }
     setTotal(i);
-  };
+  }, [items]);
 
   useEffect(() => {
     calcTotal();
-  }, [items]);
+  }, [calcTotal]);
 
   return (
     <div className="container card my-3">

@@ -42,10 +42,11 @@ const clearShoppingCart = () => {
   localStorage.setItem("shoppingCart", []);
 };
 
-export default {
+const sCutils = {
   getItems,
   addItem,
   clearShoppingCart,
   changeAmount,
   deleteItem,
 };
+export default sCutils;
