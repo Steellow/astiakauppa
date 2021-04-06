@@ -14,7 +14,7 @@ export default function Header({ search }) {
     <header className="row">
       <section className="col-12 text-center">
         <Link to="/">
-          <img className="img-responsive text-center p-4 col-3" src={logo} alt="Logo"></img>
+          <img className="img-responsive text-center p-4 col-2" src={logo} alt="Logo"></img>
         </Link>
       </section>
 
