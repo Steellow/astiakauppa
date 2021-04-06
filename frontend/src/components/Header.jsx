@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import logo from "../img/arabia_logo_big.png";
+import logo from "../img/logo.png";
 import { Link } from "react-router-dom";
+import Dropdown from "./Dropdown.jsx";
 
 export default function Header({ search }) {
   const [criteria, setCriteria] = useState("");
@@ -13,7 +14,7 @@ export default function Header({ search }) {
     <header className="row">
       <section className="col-12 text-center">
         <Link to="/">
-          <img className="img-responsive text-center p-4" src={logo} alt="Logo"></img>
+          <img className="img-responsive text-center p-4 col-2" src={logo} alt="Logo"></img>
         </Link>
       </section>
 
@@ -49,24 +50,13 @@ export default function Header({ search }) {
                 </Link>
               </li>
             </ul>
-            {/* Alustava pohja */}
-            <div className="display-flex">
-              <button className="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">
-                Lajittele
-              </button>
-              <ul className="dropdown-menu">
-                <li>
-                  <a href="#"></a>
-                </li>
-                <li>
-                  <a href="#"></a>
-                </li>
-                <li>
-                  <a href="#"></a>
-                </li>
-              </ul>
-            </div>
+            <Dropdown />
             <ul className="nav navbar-nav navbar-collapse flex-fill w-50 justify-content-end">
+              <li className="nav-item">
+                <Link to="/kirjaudu" className="nav-link" style={{ color: "white" }}>
+                  Kirjaudu
+                </Link>
+              </li>
               <li className="nav-item">
                 <Link to="/ostoskori" className="nav-link" style={{ color: "white" }}>
                   <i className="fa fa-lg fa-shopping-cart"></i>
