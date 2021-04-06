@@ -129,7 +129,6 @@ export default function CheckOutPage(item) {
                <div className="col-12 col-md-5 p-4 ml-5 mt-2 mb-5">
                   <h4 class="d-flex justify-content-between align-items-center mb-3">
                     <span >Ostoskori <i class="fa fa-shopping-cart"></i></span>
-                    <span class="badge badge-secondary badge-pill">3</span>
                   </h4>
                 <ul class="list-group mb-3 sticky-top">
                   <div>
