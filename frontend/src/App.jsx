@@ -8,6 +8,7 @@ import ShoppingCartPage from "./pages/ShoppingCartPage";
 import LogInPage from "./pages/LogInPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import CheckOutPage from "./pages/CheckOutPage";
+import PromptLogin from "./pages/PromptLogin";
 
 function App() {
   const [allProducts, setItems] = useState([]);
@@ -55,6 +56,7 @@ function App() {
           <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} />
           <Route path="/ostoskori" component={ShoppingCartPage} />
           <Route path="/kirjaudu" component={LogInPage} />
+          <Route path="/asiakastiedot" component={PromptLogin} />
           <Route path="/rekisteri" component={RegistrationPage} />
           <Route path="/checkout" component={CheckOutPage} />
           <Route
