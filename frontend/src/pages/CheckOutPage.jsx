@@ -30,6 +30,7 @@ export default function CheckOutPage(item) {
           </div>
     
           {/* asiakastiedot */}
+          {/* TODO: Täytä valmiiksi jos kirjautun sisä */}
     
               <div className="card col-12 col-md-5 login-card p-4 ml-5 mt-2 mb-5">
                   <h4>Asiakastiedot</h4>
