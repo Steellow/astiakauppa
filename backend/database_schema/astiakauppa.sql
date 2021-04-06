@@ -14,7 +14,7 @@ use astiakauppa;
 create table users (
     id integer primary key auto_increment,
     username char(50) unique,
-    password char(50),
+    password char(64),
     firstname char(50) not null,
     lastname char(50) not null,
     email char(100) not null,
