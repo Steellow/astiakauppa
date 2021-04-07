@@ -13,11 +13,10 @@ use astiakauppa;
 
 create table users (
     id integer primary key auto_increment,
-    username char(50) unique,
     password char(64),
     firstname char(50) not null,
     lastname char(50) not null,
-    email char(100) not null,
+    email char(100) unique not null,
     address char(100) not null,
     city char(50) not null,
     postalcode integer,
@@ -59,8 +58,8 @@ create table order_row (
 );
 
 -- verkkokaupan omistaja
-insert into users(username,firstname,lastname,password,email,address,city,postalcode,admin)
-values('admin', 'Jorma','Jermula','admin123','jormajermu@hotmail.com','jormankatu 12', 'Oulu', 90150, 1);
+insert into users(firstname,lastname,password,email,address,city,postalcode,admin)
+values('Jorma','Jermula','admin123','jormajermu@hotmail.com','jormankatu 12', 'Oulu', 90150, 1);
 
 -- alkuarvot testaamiseen
 -- insert into productgroup(name)
