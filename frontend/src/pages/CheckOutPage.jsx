@@ -77,10 +77,25 @@ export default function CheckOutPage(item) {
                           <label class="custom-control-label" for="same-address">Toimitusosoitteeni on sama kuin laskutus.</label>
                       </div>
                     </div>
+                   
+                  {/* Toimitustapa */}
+                  <div class="form-group">
+                  <h4>Toimitustapa</h4>
+    
+                    <div class="form-group">
+                        <div class="custom-control custom-radio">
+                            <input id="toimitusKotiin" name="toimitusTapa" type="radio" class="custom-control-input"  required=""/>
+                            <label class="custom-control-label" for="toimitusKotiin">Toimitus kotiin</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input id="postitoimiPaikka" name="toimitusTapa" type="radio" class="custom-control-input" required=""/>
+                            <label class="custom-control-label" for="postitoimiPaikka">Toimitus postitoimipaikkaan</label>
+                        </div>
+                    </div>
     
                   {/* Maksutapa */}
     
-                  <div class="form-group">
+                  
                     <h4>Maksutapa</h4>
     
                     <div class="form-group">
