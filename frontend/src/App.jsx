@@ -9,6 +9,7 @@ import LogInPage from "./pages/LogInPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import CheckOutPage from "./pages/CheckOutPage";
 import PromptLogin from "./pages/PromptLogin";
+import RegistrationSuccess from "./pages/RegistrationSuccess";
 
 function App() {
   const [allProducts, setItems] = useState([]);
@@ -59,6 +60,7 @@ function App() {
           <Route path="/asiakastiedot" component={PromptLogin} />
           <Route path="/rekisteri" component={RegistrationPage} />
           <Route path="/checkout" component={CheckOutPage} />
+          <Route path="/rekisteriok" component={RegistrationSuccess} />
           <Route
             path="/lautaset"
             render={(props) => <Products products={allProducts.filter((prod) => Number(prod.groupid) === Number(1))} {...props} />}
