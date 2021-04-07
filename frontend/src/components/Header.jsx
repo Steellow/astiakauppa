@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import logo from "../img/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Dropdown from "./Dropdown.jsx";
 
-export default function Header({ search }) {
+export default function Header() {
   const [criteria, setCriteria] = useState("");
+  const history = useHistory();
 
   function doSearch(e) {
     e.preventDefault();
-    search(criteria);
+    if (criteria.length > 0) {
+      history.push(`/haku/${criteria}`);
+    }
   }
   return (
     <header className="row">

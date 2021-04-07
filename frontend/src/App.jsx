@@ -9,27 +9,16 @@ import LogInPage from "./pages/LogInPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import CheckOutPage from "./pages/CheckOutPage";
 import PromptLogin from "./pages/PromptLogin";
+import SearchResults from "./pages/SearchResults";
 
 function App() {
   const [allProducts, setItems] = useState([]);
-  const [searchCriteria, setSearchCriteria] = useState(null);
 
-  const URL = "http://localhost/astiakauppa/";
-
-  let status = 0;
-
-  function search(criteria) {
-    // console.log(criteria);
-    setSearchCriteria(criteria);
-  }
+  const URL = "http://localhost/astiakauppa/retrieve.php";
 
   useEffect(() => {
-    let address = URL + "retrieve.php";
-    // console.log (searchCriteria);
-    if (searchCriteria != null) {
-      address = URL + "search.php/?criteria=" + searchCriteria;
-    }
-    fetch(address)
+    let status = 0;
+    fetch(URL)
       .then((response) => {
         status = parseInt(response.status);
         return response.json();
@@ -46,12 +35,12 @@ function App() {
           alert(error);
         }
       );
-  }, [searchCriteria]);
+  }, []);
 
   return (
     <Router>
       <div className="container">
-        <Header search={search} />
+        <Header />
         <Switch>
           <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} />
           <Route path="/ostoskori" component={ShoppingCartPage} />
@@ -71,6 +60,7 @@ function App() {
             path="/lasit"
             render={(props) => <Products products={allProducts.filter((prod) => Number(prod.groupid) === Number(3))} {...props} />}
           />
+          <Route path="/haku/:searchterm" component={SearchResults} />
           <Route path="/tuote/:id" component={SingleProductPage} />
         </Switch>
         <Footer />
