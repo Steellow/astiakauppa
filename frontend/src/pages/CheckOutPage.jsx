@@ -2,7 +2,8 @@ import React, { useState, useEffect, useCallback } from "react";
 import shoppingCart from "../util/ShoppingCart";
 import CheckOutCart from "../components/CheckOutCart";
 
-export default function CheckOutPage(item) {
+export default function CheckOutPage() {
+  const URLI = "http://localhost/astiakauppa/checkout.php";
   const [items, setItems] = useState(shoppingCart.getItems());
   const [total, setTotal] = useState(0);
 
@@ -31,17 +32,17 @@ export default function CheckOutPage(item) {
       <div className="card col-12 col-md-5 login-card p-4 ml-5 mt-2 mb-5">
         <h4>Asiakastiedot</h4>
         <div>
-          <form action="checkout.php" method="get">
+          <form action={URLI} method="POST">
             <div className="form-group">
               <label for="fullname">
                 <i className="fa fa-user"></i> Koko nimi
               </label>
               <div className="row">
                 <div className="col-md-6">
-                  <input type="text" className="form-control" id="firstname" placeholder="Etunimi" />
+                  <input type="text" className="form-control" id="firstname" name="firstname" required placeholder="Etunimi" />
                 </div>
                 <div className="form-group col-md-6">
-                  <input type="text" className="form-control" id="lastname" placeholder="Sukunimi" />
+                  <input type="text" className="form-control" id="lastname" name="lastname" required placeholder="Sukunimi" />
                 </div>
               </div>
             </div>
@@ -51,7 +52,7 @@ export default function CheckOutPage(item) {
                 <label for="email">
                   <i className="fa fa-envelope"></i> Sähköposti
                 </label>
-                <input type="email" className="form-control" id="email" placeholder="Sähköpostiosoite" />
+                <input type="email" className="form-control" id="email" name="email" required placeholder="Sähköpostiosoite" />
               </div>
             </div>
 
@@ -59,17 +60,17 @@ export default function CheckOutPage(item) {
               <label for="address">
                 <i className="fa fa-address-card-o"></i> Osoite
               </label>
-              <input type="text" className="form-control" id="address" placeholder="Katuosoite" />
+              <input type="text" className="form-control" id="address" name="address" required placeholder="Katuosoite" />
             </div>
 
             <div className="row">
               <div className="col-md-6 mb-3">
                 <label for="city">Kaupunki</label>
-                <input type="text" className="form-control" id="city" />
+                <input type="text" className="form-control" id="city" name="city" required />
               </div>
               <div className="form-group col-md-5">
                 <label for="zip">Postinumero</label>
-                <input type="text" className="form-control" id="zip" />
+                <input type="text" className="form-control" id="zip" name="postalcode" required />
               </div>
 
               <div className="form-group">
@@ -87,13 +88,13 @@ export default function CheckOutPage(item) {
 
                 <div class="form-group">
                   <div class="custom-control custom-radio">
-                    <input id="toimitusKotiin" name="toimitusTapa" type="radio" class="custom-control-input" required="" />
+                    <input id="toimitusKotiin" name="toimitusTapa" type="radio" class="custom-control-input" />
                     <label class="custom-control-label" for="toimitusKotiin">
                       Toimitus kotiin
                     </label>
                   </div>
                   <div class="custom-control custom-radio">
-                    <input id="postitoimiPaikka" name="toimitusTapa" type="radio" class="custom-control-input" required="" />
+                    <input id="postitoimiPaikka" name="toimitusTapa" type="radio" class="custom-control-input" />
                     <label class="custom-control-label" for="postitoimiPaikka">
                       Toimitus postitoimipaikkaan
                     </label>
@@ -106,13 +107,13 @@ export default function CheckOutPage(item) {
 
                 <div className="form-group">
                   <div className="custom-control custom-radio">
-                    <input id="credit" name="paymentMethod" type="radio" className="custom-control-input" required="" />
+                    <input id="credit" name="paymentMethod" type="radio" className="custom-control-input" />
                     <label className="custom-control-label" for="credit">
                       Maksukortti
                     </label>
                   </div>
                   <div className="custom-control custom-radio">
-                    <input id="paypal" name="paymentMethod" type="radio" className="custom-control-input" required="" />
+                    <input id="paypal" name="paymentMethod" type="radio" className="custom-control-input" />
                     <label className="custom-control-label" for="paypal">
                       PayPal
                     </label>
@@ -121,25 +122,25 @@ export default function CheckOutPage(item) {
 
                 <div className="form-group">
                   <label for="cname">Nimi kortilla</label>
-                  <input type="text" className="form-control" id="cname" name="cardname" placeholder="Maija Mehiläinen" required="" />
+                  <input type="text" className="form-control" id="cname" name="status" placeholder="Maija Mehiläinen" />
                   <small className="text-muted">Koko nimi kuten kortilla näkyy</small>
                   <div className="invalid-feedback"> Kortin nimi vaaditaan </div>
                 </div>
                 <div className="form-group">
                   <label for="ccnum">Kortin numero</label>
-                  <input type="text" className="form-control" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required=""></input>
+                  <input type="text" className="form-control" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"></input>
                   <div className="invalid-feedback"> Luottokortin numero vaaditaan </div>
                 </div>
 
                 <div className="form-row">
                   <div className="col-md-3 mb-3">
                     <label for="expyyear">Vanhenee</label>
-                    <input type="text" className="form-control" id="expyear" name="expyear" placeholder="KK/VV" required=""></input>
+                    <input type="text" className="form-control" id="expyear" name="expyear" placeholder="KK/VV"></input>
                     <div className="invalid-feedback"> Expiration date required </div>
                   </div>
                   <div className=" col-md-3">
                     <label for="cvv">CVV</label>
-                    <input type="text" className="form-control" id="cvv" name="cvv" placeholder="352" required=""></input>
+                    <input type="text" className="form-control" id="cvv" name="cvv" placeholder="352"></input>
                     <div className="invalid-feedback"> Security code required </div>
                   </div>
                 </div>
