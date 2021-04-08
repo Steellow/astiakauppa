@@ -84,106 +84,88 @@ values('Lasit');
 -- mukit
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Nuuskamuikkunen vihreä', 5,12.90,2,'https://arabia.fi/var/rorstrand/storage/images/frontpage/astiasarjat/muumi-muki-listaus/2015-nuuskamuikkunen-vihrea/listaus-listing/26865-1-fin-FI/listaus-listing.png',
-'Keväisen vihreä Muumimuki. Tilavuus 0,3 l. Konepesun kestävä.');
+values('Muumimuki: Taikuri', 5,13.90,2,'https://i.ibb.co/qY5T4fz/taikuri.png',
+'Monivärinen Muumimuki. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Pikkumyy punainen', 5,9.90,2,'https://arabia.fi/var/rorstrand/storage/images/frontpage/astiasarjat/muumi-muki-listaus/2015-pikku-myy-punainen/listaus-listing/26937-1-fin-FI/listaus-listing.png',
-'Pirteän punainen Muumimuki! Tilavuus 0,3 l. Konepesun kestävä.');
+values('Muumimuki: Lumihevonen', 5,13.90,2,'https://i.ibb.co/xHvVLnV/talvi.png',
+'Vuoden 2016 sesonkimuki, jonka kuvitus pohjautuu Taikatalvi-kirjaan. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Nipsu turkoosi', 5,16.90,2,'https://arabia.fi/var/rorstrand/storage/images/frontpage/astiasarjat/muumi-muki-listaus/2008-nipsu-turkoosi/listaus-listing/26076-1-fin-FI/listaus-listing.png',
-'Raikkaan turkoosissa Muumimukissa seikkailee rikkauksista haaveileva hassunhauska Nipsu. Tilavuus 0,3 l. Konepesun kestävä.');
+values('Muumimuki: Talviuni', 5,16.90,2,'https://i.ibb.co/NxMpPp5/uni.png',
+'Talven 2015 sesonkituote. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Mymmeli', 5,14.90,2,'https://arabia.fi/var/rorstrand/storage/images/frontpage/astiasarjat/muumi-muki-listaus/2008-mymmeli/listaus-listing/26148-1-fin-FI/listaus-listing.png',
-'Pirteän punakassa Arabian Muumimukissa istuu ihana ja huoleton Mymmeli. Tilavuus 0,3 l. Konepesun kestävä.');
+values('Muumimuki: Seikkailu muutto', 5,14.90,2,'https://i.ibb.co/B42BBM9/pyrst-t-hti.png',
+'Muumit pakenevat pyrstötähteä ja ottavat mukaansa vain tärkeimmät tavarat. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Hattivatti',5,10.90,2,'https://arabia.fi/var/rorstrand/storage/images/frontpage/arabiasta/muumimuki-listaus/2007-hattivatit-hattifnattarna-hattifatteners/listaus-listing/26004-1-fin-FI/listaus-listing.png',
-'Hattivatit elävät laumoissa ja vaeltavat kohti taivaanrantaa. Tilavuus 0,3 l. Konepesun kestävä.');
+values('Muumimuki: Muumipappa tuumiskelee',5,10.90,2,'https://i.ibb.co/YyrRmPb/pappa.png',
+'Yksi tunnetuimmista Muumimukeista. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Muumipappa sininen',5,14.90,2,'https://arabia.fi/var/rorstrand/storage/images/frontpage/astiasarjat/muumi-muki-listaus/2014-muumipappa-tummansininen/listaus-listing/26721-1-fin-FI/listaus-listing.png',
-'Muumipappa on poikamainen ja seikkailunhaluinen, mutta varsin ylpeä siitä, että hän on perheenpää. Tilavuus 0,3 l. Konepesun kestävä.');
+values('Muumimuki: Nuuskamuikkunen',5,14.90,2,'https://i.ibb.co/QH7vnQv/nuuskamuikkunen.png',
+'Ensimmäinen Nuuskamuikkunen-muki, joka oli valmistuksessa yli vuosikymmenen. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Mörkö',5,17.90,2,'https://arabia.fi/var/rorstrand/storage/images/frontpage/astiasarjat/muumi-muki-listaus/2005-morko/listaus-listing/25858-1-fin-FI/listaus-listing.png',
-'Mörkö huokuu ympärillään kylmyyttä ja maa jäätyy hänen allaan. Tilavuus 0,3 l. Konepesun kestävä.');
+values('Muumimuki: Muumitalo',5,17.90,2,'https://i.ibb.co/MPKQH54/muumitalo.png',
+'"Kuka asuu Muumitalossa"-tarinaan pohjautuva Muumitalo-muki. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Niiskuneiti pinkki',5,12.90,2,'https://arabia.fi/var/rorstrand/storage/images/frontpage/astiasarjat/muumi-muki-listaus/2013-niiskuneiti-pinkki-snorkfroken-rosa-snorkmaiden-pink/listaus-listing/26625-1-fin-FI/listaus-listing.png',
-'Niiskuneiti rakastaa haaveilua ja kuvittelee mielellään, millainen hänen unelmiensa prinssi olisi. Tilavuus 0,3 l. Konepesun kestävä.');
+values('Muumimuki: Muumipappa sininen',5,12.90,2,'https://i.ibb.co/9NMbxtK/muumipappa.png',
+'Muumipappa purjehtimassa. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Taikamuki: Taika iso Siimes',5,21.90,2,'https://iittala.scene7.com/is/image/iittala/?&src=is{iittala/iittala%2Dtaika%2Dsiimes%2Dmug%2D04l?size=3800,3800&wid=2000&hei=2000&scl=2.6}&extend=100,100,100,100',
-'Klaus Haapaniemen suunnittelema Taika Siimes tuo mieleen ihanan kevätpäivän. Tilavuus 0,4 l. Mikrouunin ja konepesun kestävä.');
+values('Muumimuki: Ystävyys',5,21.90,2,'https://i.ibb.co/zsdJ8Lm/kukka.png',
+'Ystävyydestä kertova Muumimuki. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Taikamuki: Taika iso valkoinen',5,21.90,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-mug-04_l-white?size=3800,3800&wid=2000&hei=2000&scl=2.6}&extend=100,100,100,100',
-'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,4 l. Mikrouunin ja konepesun kestävä.');
+values('Muumimuki: Hetki Rannalla',5,21.90,2,'https://i.ibb.co/vjXtpqx/kalastus.png',
+'Värikäs ja kesäinen Muumimuki. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Taikamuki: Taika iso sininen',5,21.90,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-mug-04_l-blue?size=3800,3800&wid=2000&hei=2000&scl=2.6}&extend=100,100,100,100',
-'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,4 l. Mikrouunin ja konepesun kestävä.');
+values('Muumimuki: Kuusen alla',5,21.90,2,'https://i.ibb.co/XXQwDFr/joulu.png',
+'Muumit juhlimassa joulua. TIlavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Taikamuki: Taika valkoinen espressokuppi',5,13.90,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-espresso-cup-01_l-white?size=3800,3800&wid=2000&hei=2000&scl=3.2}&extend=100,100,100,100',
-'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,1 l. Mikrouunin ja konepesun kestävä.');
+values('Muumimuki: Haisuli',5,13.90,2,'https://i.ibb.co/t45B1Nf/haisuli.png',
+'Haisuli tekemässä kepposia. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Taikamuki: Taika sininen espressokuppi',5,13.90,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-espresso-cup-01_l-blue?size=3800,3800&wid=2000&hei=2000&scl=3.2}&extend=100,100,100,100',
-'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,1 l. Mikrouunin ja konepesun kestävä.');
+values('Muumimuki: Kesäteatteri',5,13.90,2,'https://i.ibb.co/XtnbgKn/teatteri.png',
+'Värikäs ja kesäinen Muumimuki. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Taikamuki: Taika mustavalkoinen espressokuppi',5,13.90,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-espresso-cup-01_l-black?size=3800,3800&wid=2000&hei=2000&scl=3.2}&extend=100,100,100,100',
-'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,1 l. Mikrouunin ja konepesun kestävä.');
-
-insert into product(name,cost,price,groupid,pic,description)
-values('Taikamuki: Taika Siimes kahvikuppi',5,16.50,2,'https://iittala.scene7.com/is/image/iittala/?&src=is{iittala/iittala%2Dtaika%2Dsiimes%2Dcoffee%2Dcup%2D02l?size=3800,3800&wid=2000&hei=2000&scl=2.8}&extend=100,100,100,100',
-'Klaus Haapaniemen suunnittelema Taika Siimes tuo mieleen ihanan kevätpäivän. Tilavuus 0,2 l. Mikrouunin ja konepesun kestävä.');
-
-insert into product(name,cost,price,groupid,pic,description)
-values('Taikamuki: Taika sininen kahvikuppi',5,16.50,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-coffee-cappucino-cup-02l-blue?size=3800,3800&wid=2000&hei=2000&scl=2.8}&extend=100,100,100,100',
-'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,2 l. Mikrouunin ja konepesun kestävä.');
-
-insert into product(name,cost,price,groupid,pic,description)
-values('Taikamuki: Taika valkoinen kahvikuppi',5,16.50,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-coffee-cappucino-cup-02l-white?size=3800,3800&wid=2000&hei=2000&scl=2.8}&extend=100,100,100,100',
-'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,2 l. Mikrouunin ja konepesun kestävä.');
-
-insert into product(name,cost,price,groupid,pic,description)
-values('Taikamuki: Taika mustavalkoinen kahvikuppi',5,16.50,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-coffee-cappucino-cup-02l-black?size=3800,3800&wid=2000&hei=2000&scl=2.8}&extend=100,100,100,100',
-'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,2 l. Mikrouunin ja konepesun kestävä.');
-
-insert into product(name,cost,price,groupid,pic,description)
-values('Taikamuki: Taika punainen kahvikuppi',5,16.50,2,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-coffee--cappucino-cup-02_l-red?size=3800,3800&wid=2000&hei=2000&scl=3.0}&extend=100,100,100,100',
-'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 0,2 l. Mikrouunin ja konepesun kestävä.');
+values('Muumimuki: Perhe',5,13.90,2, 'https://i.ibb.co/D1hbwnX/perhe.png',
+'Perheen tärkeyytä kuvaava Muumimuki. Tilavuus 0,3 l. Konepesun kestävä.');
 
 -- lautaset
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumilautanen: Nuuskamuikkunen vihreä', 7,21.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/arabia-moomin-plate-19_cm-snufkin?size=3800,3800&wid=2000&hei=2000&scl=2.0}&extend=100,100,100,100',
-'Huuliharppua soittava Nuuskamuikkunen on lempeä ja huoleton kulkuri. ⌀19cm Konepesun kestävä.');
+values('Muumilautanen: syvä Tiuhti ja Viuhti', 7,26.90,1,'https://i.ibb.co/y5dZM0n/tiuhtijaviuhti.png',
+'Tiuhti ja Viuhti salaperäisen matkalaukun kanssa. ⌀15cm Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumilautanen: Pikkumyy punainen', 7,18.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/arabia-moomin-plate-19_cm-little-my?size=3800,3800&wid=2000&hei=2000&scl=2.0}&extend=100,100,100,100',
-'Pikku Myy on Mymmelin lapsista kaikista pienin ja pippurisin. ⌀19cm Konepesun kestävä.');
+values('Muumilautanen: syvä Mymmeli', 7,18.90,1,'https://i.ibb.co/rZ2cM3n/mymmeli.png',
+'Mymmeli unelmoimassa elämänsä rakkauden löytämisestä. ⌀15cm Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumilautanen: syvä Nipsu turkoosi', 7,23.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/arabia-moomin-bowl-15_cm-sniff?size=3800,3800&wid=2000&hei=2000&scl=2.4}&extend=100,100,100,100',
-'Luonteeltaan kiltti, mutta hieman pelokaskin Nipsu rakastaa kallisarvoisia, kiiltäviä ja kimaltavia esineitä. ⌀15cm Konepesun kestävä.');
+values('Muumilautanen: syvä Nuuskamuikkunen', 7,23.90,1,'https://i.ibb.co/9ZWkMbm/muikkune.png',
+'Nuuksamuikkunen soittamassa pilliä. ⌀15cm Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumilautanen: syvä Mymmeli', 7,23.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/arabia-moomin-bowl-15_cm-mymble?size=3800,3800&wid=2000&hei=2000&scl=2.0}&extend=100,100,100,100',
-'Mymmeli unelmoi mielellään elämänsä rakkauden löytämisestä. Hän ihastuu usein ja haaveilee erityisesti Poliisimestarista. ⌀15cm Konepesun kestävä.');
+values('Muumilautanen: syvä Muumimamma ja Marjat', 7,23.90,1,'https://i.ibb.co/5jF3bMb/mamma.png',
+'Muumimamma ja Marjat. ⌀15cm Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Taikalautanen: valkoinen 22 cm', 7,26.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-plate-22_cm-white?size=3800,3800&wid=2000&hei=2000&scl=2.2}&extend=100,100,100,100',
-'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Valkoinen. ⌀22cm. Mikrouunin ja konepesun kestävä.');
+values('Muumilautanen: syvä Talviuni', 7,26.90,1,'https://i.ibb.co/gM7mSv9/talviuni.png',
+'Muumit viettämässä talviunta. ⌀15cm Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Taikalautanen: sininen 22 cm', 7,26.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-plate-22_cm-blue?size=3800,3800&wid=2000&hei=2000&scl=2.2}&extend=100,100,100,100',
-'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Sininen. ⌀22cm. Mikrouunin ja konepesun kestävä.');
+values('Muumilautanen: syvä taikuri', 7,21.90,1,'https://i.ibb.co/sqK8DYn/taikuri-kulho.png',
+'⌀15cm Konepesun kestävä.');
+
+--
 
 insert into product(name,cost,price,groupid,pic,description)
 values('Taikalautanen: mustavalkoinen 22 cm', 7,26.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-plate-22_cm-black?size=3800,3800&wid=2000&hei=2000&scl=2.2}&extend=100,100,100,100',
@@ -216,8 +198,6 @@ values('Taikalautanen: Taika valkoinen espressovati', 7,9.90,1,'https://iittala.
 insert into product(name,cost,price,groupid,pic,description)
 values('Taikalautanen: Taika mustavalkoinen espressovati', 7,9.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-saucer-11_cm-black?size=3800,3800&wid=2000&hei=2000&scl=2.8}&extend=100,100,100,100',
 'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Mustavalkoinen. ⌀11cm. Mikrouunin ja konepesun kestävä.');
-
-
 
 -- lasit
 
