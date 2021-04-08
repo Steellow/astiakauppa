@@ -10,6 +10,7 @@ import RegistrationPage from "./pages/RegistrationPage";
 import CheckOutPage from "./pages/CheckOutPage";
 import PromptLogin from "./pages/PromptLogin";
 import SearchResults from "./pages/SearchResults";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
   const [allProducts, setItems] = useState([]);
@@ -62,6 +63,7 @@ function App() {
           />
           <Route path="/haku/:searchterm" component={SearchResults} />
           <Route path="/tuote/:id" component={SingleProductPage} />
+          <Route path="/admin" component={AdminDashboard} />
         </Switch>
         <Footer />
       </div>
