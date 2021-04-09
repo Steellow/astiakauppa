@@ -69,3 +69,11 @@ input[type="number"] {
   font-weight: bolder;
   color: white;
 }
+
+/* Admin dashboard */
+
+.clickableRow:hover {
+  background-color: #cccccc;
+  transition: all 0.2s;
+  cursor: pointer;
+}

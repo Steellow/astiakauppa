@@ -7,8 +7,8 @@ export default function SingleProductPage({ match }) {
 
   const URL = "http://localhost/astiakauppa/";
 
-  let status = 0;
   useEffect(() => {
+    let status = 0;
     fetch(URL + "getitem.php?id=" + match.params.id)
       .then((response) => {
         status = parseInt(response.status);
@@ -27,7 +27,7 @@ export default function SingleProductPage({ match }) {
           alert(error);
         }
       );
-  }, []);
+  }, [match.params.id]);
 
   return (
     <div className="container card my-3">

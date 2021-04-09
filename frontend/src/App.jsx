@@ -12,6 +12,7 @@ import PromptLogin from "./pages/PromptLogin";
 import RegistrationSuccess from "./pages/RegistrationSuccess";
 import SearchResults from "./pages/SearchResults";
 import AdminDashboard from "./pages/AdminDashboard";
+import AdminSingleOrder from "./pages/AdminSingleOrder";
 
 function App() {
   const [allProducts, setItems] = useState([]);
@@ -65,7 +66,8 @@ function App() {
           />
           <Route path="/haku/:searchterm" component={SearchResults} />
           <Route path="/tuote/:id" component={SingleProductPage} />
-          <Route path="/admin" component={AdminDashboard} />
+          <Route exact path="/admin" component={AdminDashboard} />
+          <Route path="/admin/tilaus/:ordernum" component={AdminSingleOrder} />
         </Switch>
         <Footer />
       </div>

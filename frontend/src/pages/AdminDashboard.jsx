@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 export default function AdminDashboard() {
   const [orders, setOrders] = useState([]);
@@ -31,7 +32,7 @@ export default function AdminDashboard() {
     <div className="card container my-2">
       <div className="row">
         <h1 className="col-12 m-3">Hallintapaneeli</h1>
-        <table className="table col-12">
+        <table className="table col-11 mx-auto">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -52,8 +53,15 @@ export default function AdminDashboard() {
 }
 
 function TableRow({ order }) {
+  const history = useHistory();
+
+  // Using history.push instead of <Link /> because <Link> didn't work on table
+  const handleRowClick = (ordernum) => {
+    history.push(`/admin/tilaus/${order.ordernum}`);
+  };
+
   return (
-    <tr>
+    <tr className="clickableRow" onClick={() => handleRowClick(order.ordernum)}>
       <th scope="row">{order.ordernum}</th>
       <td>{order.userid}</td>
       <td>{order.orderdate}</td>
