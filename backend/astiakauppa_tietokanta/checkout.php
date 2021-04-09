@@ -32,9 +32,11 @@ try {
   $query->execute();
 
   $userid = $db->lastInsertId(); 
+  $curdate = date("Y-m-d");
 
-  $order = $db->prepare("INSERT INTO orders (userid) SELECT id from users WHERE `id`=?");
+  $order = $db->prepare("INSERT INTO orders (userid, orderdate) VALUES ((SELECT id from users WHERE `id`=?), ?)");
   $order->bindValue(1, $userid);
+  $order->bindValue(2, $curdate);
   $order->execute();
 
   header('HTTP/1.1 200 OK');
