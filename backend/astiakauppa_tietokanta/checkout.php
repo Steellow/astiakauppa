@@ -14,6 +14,8 @@ try {
   $db = openDb();
   $db->beginTransaction();
 
+  // USERS-TAULU
+
   $query = $db->prepare("INSERT INTO users (firstname, lastname, email, address, city, postalcode) VALUES(:firstname,:lastname,:email,:address,:city,:postalcode)");
   $query->bindValue(':firstname', $firstname, PDO::PARAM_STR);
   $query->bindValue(':lastname', $lastname, PDO::PARAM_STR);
@@ -22,6 +24,8 @@ try {
   $query->bindValue(':city', $city, PDO::PARAM_STR);
   $query->bindValue(':postalcode', $postalcode, PDO::PARAM_INT);
   $query->execute();
+
+  // ORDER-TAULU
 
   $userid = $db->lastInsertId(); 
   $curdate = date("Y-m-d");
