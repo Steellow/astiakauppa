@@ -56,6 +56,11 @@ export default function Header() {
             <Dropdown />
             <ul className="nav navbar-nav navbar-collapse flex-fill w-50 justify-content-end">
               <li className="nav-item">
+                <Link to="/admin" className="nav-link" style={{ color: "white" }}>
+                  Hallintapaneeli
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link to="/kirjaudu" className="nav-link" style={{ color: "white" }}>
                   Kirjaudu
                 </Link>
