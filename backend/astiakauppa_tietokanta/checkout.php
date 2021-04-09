@@ -10,14 +10,6 @@ try {
   $address = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
   $city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);
   $postalcode = filter_input(INPUT_POST, 'postalcode', FILTER_SANITIZE_NUMBER_INT);
-  // orders-taulu    
-  $status = /* M, T, null jne? */
-  // order_row-taulu
-  $ordernum = /* automaattisesti orders-taulusta? */
-  $productid = /* shoppingcartista hakee oikean id:n? */
-  $amount = /* shoppingcartista oikea amount? */
-
-
 
   $db = openDb();
   $db->beginTransaction();
