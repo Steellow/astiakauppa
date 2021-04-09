@@ -10,28 +10,32 @@ try {
     $address = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
     $city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);
     $postalcode = filter_input(INPUT_POST, 'postalcode', FILTER_SANITIZE_NUMBER_INT);
-    // orders-taulu
-    $userid = /* hakisi automaattisesti users-taulusta oikean id */
-    $status = /* M, T, null jne? */
-    // order_row-taulu
-    $ordernum = /* automaattisesti orders-taulusta? */
-    $productid = /* shoppingcartista hakee oikean id:n? */
-    $amount = /* shoppingcartista oikea amount? */
-
-
-
-    $db = openDb();
-    $db->beginTransaction();
-    $sql = "INSERT INTO users (firstname, lastname, email, address, city, postalcode)
-    VALUES (:firstname,:lastname,:email,:address,:city,:postalcode)"; 
-    $query = $db->prepare($sql);
-    $query->bindValue(':firstname', $firstname, PDO::PARAM_STR);
-    $query->bindValue(':lastname', $lastname, PDO::PARAM_STR);
-    $query->bindValue(':email', $email, PDO::PARAM_STR);
-    $query->bindValue(':address', $address, PDO::PARAM_STR);
-    $query->bindValue(':city', $city, PDO::PARAM_STR);
-    $query->bindValue(':postalcode', $postalcode, PDO::PARAM_INT);
-    $query->execute();
+       // orders-taulu    
+       $status = /* M, T, null jne? */
+       // order_row-taulu
+       $ordernum = /* automaattisesti orders-taulusta? */
+       $productid = /* shoppingcartista hakee oikean id:n? */
+       $amount = /* shoppingcartista oikea amount? */
+   
+   
+   
+       $db = openDb();
+       $db->beginTransaction();
+   
+       $query = $db->prepare("INSERT INTO users (firstname, lastname, email, address, city, postalcode) VALUES(:firstname,:lastname,:email,:address,:city,:postalcode)");
+       $query->bindValue(':firstname', $firstname, PDO::PARAM_STR);
+       $query->bindValue(':lastname', $lastname, PDO::PARAM_STR);
+       $query->bindValue(':email', $email, PDO::PARAM_STR);
+       $query->bindValue(':address', $address, PDO::PARAM_STR);
+       $query->bindValue(':city', $city, PDO::PARAM_STR);
+       $query->bindValue(':postalcode', $postalcode, PDO::PARAM_INT);
+       $query->execute();
+   
+       $lastId = $db->lastInsertId(); 
+   
+       $order = $db->prepare("INSERT INTO orders (userid) SELECT id from users WHERE `id`=?");
+       $order->bindValue(1, $lastId);
+       $order->execute();
     header('HTTP/1.1 200 OK');
     Header("Location: http://localhost:3000/"); /* oma sivu onnistuneelle checkoutille? */
   
