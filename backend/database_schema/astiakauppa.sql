@@ -199,6 +199,22 @@ insert into product(name,cost,price,groupid,pic,description)
 values('Taikalautanen: Taika mustavalkoinen espressovati', 7,9.90,1,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-saucer-11_cm-black?size=3800,3800&wid=2000&hei=2000&scl=2.8}&extend=100,100,100,100',
 'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Mustavalkoinen. ⌀11cm. Mikrouunin ja konepesun kestävä.');
 
+insert into product(name,cost,price,groupid,pic,description)
+values('Kastehelmi: Lautanen', 7,12.95,1,'https://i.ibb.co/tm4WrtK/kastehelmilautanen.jpg',
+'Oiva Toikan suunnittelema kastehelmi kuvastaa lasipisaroita, jotka heijastavat kauniisti valoa. Kirkas. ⌀17cm. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Taikalautanen: Taika mustavalkoinen kulho', 10,28.50,1,'https://i.ibb.co/0jHzZ6J/taikamurokulho.jpg',
+'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Mustavalkoinen. 0.6 l. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Teemalautanen: musta 21 cm', 7,11.90,1,'https://i.ibb.co/kHtyFrN/mustalautanen.jpg',
+'Selkeä muotoinen ja tyylikäs Kaj Franckin suunnittelema Teema-sarjan lautanen. Musta. 21 cm. Mikrouunin ja konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Teemalautanen: musta syvä 21 cm', 7,17.90,1,'https://i.ibb.co/HdSW0yJ/syvamustalautanen.jpg',
+'Selkeä muotoinen ja tyylikäs Kaj Franckin suunnittelema Teema-sarjan syvä lautanen. Musta. Syvä 21 cm. Mikrouunin ja konepesun kestävä.');
+
 -- lasit
 
 insert into product(name,cost,price,groupid,pic,description)
