@@ -220,3 +220,7 @@ values('Muumilasi: Muumipeikko', 3,12.90,3,'https://iittala.scene7.com/is/image/
 insert into product(name,cost,price,groupid,pic,description)
 values('Taikalasi: Juomalasi', 6,29.90,3,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-tumbler-38_cl-clear?size=3800,3800&wid=2000&hei=2000&scl=2.4}&extend=100,100,100,100',
 'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 38 cl. Konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Kartio: Juomalasi', 5,13.90,3,'https://i.ibb.co/GV8bVGT/kartiojuomalasi.jpg',
+'Kaj Franckin suunnittelema klassinen ja geometrinen juomalasi sopii täydellisesti arkikäyttöön. Kirkas. Tilavuus 21 cl. Konepesun kestävä.');
