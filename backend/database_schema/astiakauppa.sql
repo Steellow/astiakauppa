@@ -224,3 +224,8 @@ values('Taikalasi: Juomalasi', 6,29.90,3,'https://iittala.scene7.com/is/image/ii
 insert into product(name,cost,price,groupid,pic,description)
 values('Kartio: Juomalasi', 5,13.90,3,'https://i.ibb.co/GV8bVGT/kartiojuomalasi.jpg',
 'Kaj Franckin suunnittelema klassinen ja geometrinen juomalasi sopii täydellisesti arkikäyttöön. Kirkas. Tilavuus 21 cl. Konepesun kestävä.');
+
+insert into product(name,cost,price,groupid,pic,description)
+values('Kalinka: Juomalasi', 8,17.00,3,'https://i.ibb.co/YdvLWm9/kalinkalasit.jpg',
+'80-luvulla Timo Sarpanevan suunnittelema Kalinka on heleä ja yksityiskohtainen juomalasi. Kirkas. Tilavuus 20 cl. Vain käsinpesu.');
+
