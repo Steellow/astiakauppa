@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react';
 import SingleProduct from "./SingleProduct";
 
 export default function Products({ products }) {
-  const [data, setData] = useState([]);
-
   return (
     <div className="container">
       <div className="row">
