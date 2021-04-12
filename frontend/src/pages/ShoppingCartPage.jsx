@@ -17,7 +17,7 @@ function ShoppingCartPage() {
     let i = 0;
     for (let ii = 0; ii < items.length; ii++) {
       const item = items[ii];
-      i += item.amount * item.product.price;
+      i += item.amount * (item.product.discprice || item.product.price);
     }
     setTotal(i);
   }, [items]);

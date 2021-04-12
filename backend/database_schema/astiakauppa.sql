@@ -34,6 +34,7 @@ create table product (
     name char(50) not null,
     cost decimal(5,2),
     price decimal(5,2),
+    discprice decimal(5, 2),
     groupid smallint not null,
     pic char(255),
     description char(255),

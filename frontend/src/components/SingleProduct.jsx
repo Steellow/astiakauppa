@@ -14,7 +14,7 @@ export default function SingleProduct({ product }) {
               </h6>
             </div>
             <div className="card-text">
-              <p className="font-weight-bold text-danger h5">{product.price}€</p>
+              <p className="font-weight-bold text-danger h5">{product.discprice || product.price}€</p>
             </div>
           </div>
         </div>
