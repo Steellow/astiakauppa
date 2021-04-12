@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import logo from "../img/logo.png";
 import { Link, useHistory } from "react-router-dom";
-import Dropdown from "./Dropdown.jsx";
 
 export default function Header() {
   const [criteria, setCriteria] = useState("");
@@ -13,16 +12,16 @@ export default function Header() {
       history.push(`/haku/${criteria}`);
     }
   }
+
   return (
     <header className="row">
       <section className="col-12 text-center">
         <Link to="/">
-          <img className="img-responsive text-center p-4 col-2" src={logo} alt="Logo"></img>
+          <img className="img-responsive text-center p-4 col-4" src={logo} alt="Logo"></img>
         </Link>
       </section>
 
       <section className="col-12">
-        {/* <!-- hamburger menu ei toimi kunnolla --> */}
         <nav className="navbar navbar-expand-md navbar-dark bg-dark main-nav">
           <button
             className="navbar-toggler"
@@ -35,8 +34,9 @@ export default function Header() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-            <ul className="nav navbar-nav navbar-collapse flex-fill w-100 flex-nowrap">
+
+          <div className="navbar-collapse collapse w-100" id="navbarNavDropdown">
+            <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <Link to="/lautaset" className="nav-link">
                   Lautaset
@@ -53,36 +53,32 @@ export default function Header() {
                 </Link>
               </li>
             </ul>
-            <Dropdown />
-            <ul className="nav navbar-nav navbar-collapse flex-fill w-50 justify-content-end">
-              <li className="nav-item">
-                <Link to="/admin" className="nav-link" style={{ color: "white" }}>
-                  Hallintapaneeli
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/kirjaudu" className="nav-link" style={{ color: "white" }}>
-                  Kirjaudu
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/ostoskori" className="nav-link" style={{ color: "white" }}>
-                  <i className="fa fa-lg fa-shopping-cart"></i>
-                </Link>
-              </li>
-              <form onSubmit={doSearch} className="d-flex">
+            <ul className="navbar-nav ml-auto">
+              <div className="input-group ml-2 ">
                 <input
-                  className="form-control me-2"
                   type="search"
-                  placeholder="Hae"
+                  className="form-control"
+                  placeholder="Hakutermi"
                   aria-label="Hae"
                   value={criteria}
                   onChange={(e) => setCriteria(e.target.value)}
-                ></input>
-                <button className="btn btn-outline-light ml-2" type="submit">
-                  Hae
-                </button>
-              </form>
+                />
+                <div className="input-group-append">
+                  <button className="btn btn-outline-light" onClick={doSearch}>
+                    Hae
+                  </button>
+                </div>
+              </div>
+              <li className="nav-item ">
+                <div className="d-flex justify-content-center">
+                  <Link to="/kirjaudu" className="nav-link" style={{ color: "white" }}>
+                    <i className="fa fa-lg fa-sign-in mx-2" aria-label="Kirjaudu sisään"></i>
+                  </Link>
+                  <Link to="/ostoskori" className="nav-link" style={{ color: "white" }}>
+                    <i className="fa fa-lg fa-lg fa-shopping-cart" aria-label="Ostoskori"></i>
+                  </Link>
+                </div>
+              </li>
             </ul>
           </div>
         </nav>

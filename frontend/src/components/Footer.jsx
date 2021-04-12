@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // 👇👇👇 react valitti jotain turhaa niin disablasin sen varotuksen t. hanki
 // eslint-disable-next-line
 import styles from "../styles/styles.css";
@@ -25,7 +26,12 @@ export default function Footer() {
         <a href="https://twitter.com/?lang=fi" target="3">
           <i className="fa fa-twitter"></i>
         </a>
+        <Link to="/admin" className="nav-link" style={{ color: "white" }}>
+          {/* TODO: Only show if logged in as admin */}
+          Hallintapaneeli
+        </Link>
       </p>
+
       <p className="col-12 text-center bg-secondary text-white">
         Hannes Kinnunen | Aleksi Ervasti | Milla Viitapohja | Sanni Ristimella | Arttu Heikkinen
       </p>

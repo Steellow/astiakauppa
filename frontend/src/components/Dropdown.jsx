@@ -33,7 +33,7 @@ class Dropdown extends React.Component {
     render() {
         return (
             <div>
-            <button className="btn btn-outline-light" onClick={this.showMenu}>
+            <button className="btn btn-outline-dark mt-2" onClick={this.showMenu}>
               Lajittele
             </button>
             
