@@ -197,26 +197,6 @@ values('Teemalautanen: musta syvä 21 cm', 7,17.90,1,'https://i.ibb.co/HdSW0yJ/s
 -- lasit
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumilasi: Muumipappa', 3,11.90,3,'https://iittala.scene7.com/is/image/iittala/?&src=is{iittala/arabia%2Dmoomin%2Dtumbler%2D22cl%2Dmoominpappa1?size=3800,3800&wid=2000&hei=2000&scl=2.4}&extend=100,100,100,100',
-'Muumipappa onkii kaikessa rauhassa. Tilavuus 22 cl. Konepesun kestävä.');
-
-insert into product(name,cost,price,groupid,pic,description)
-values('Muumilasi: Pikkumyy', 3,12.90,3,'https://iittala.scene7.com/is/image/iittala/?&src=is{iittala/arabia%2Dmoomin%2Dtumbler%2D22cl%2Dlittle%5Fmy?size=3800,3800&wid=2000&hei=2000&scl=2.4}&extend=100,100,100,100',
-'Pikku Myy kelluu lumpeiden kanssa niin, että vain nuttura näkyy. Tilavuus 22 cl. Konepesun kestävä.');
-
-insert into product(name,cost,price,groupid,pic,description)
-values('Muumilasi: Niiskuneiti', 3,12.90,3,'https://iittala.scene7.com/is/image/iittala/?&src=is{iittala/arabia%2Dmoomin%2Dtumbler%2D22cl%2Dsnorkmaiden1?size=3800,3800&wid=2000&hei=2000&scl=2.4}&extend=100,100,100,100',
-'Niiskuneiti on lähtenyt soutelemaan. Tilavuus 22 cl. Konepesun kestävä.');
-
-insert into product(name,cost,price,groupid,pic,description)
-values('Muumilasi: Muumipeikko', 3,12.90,3,'https://iittala.scene7.com/is/image/iittala/?&src=is{iittala/arabia%2Dmoomin%2Dtumbler%2D22cl%2Dmoomintroll1?size=3800,3800&wid=2000&hei=2000&scl=2.4}&extend=100,100,100,100',
-'Muumipeikko sukeltelee uteliaana vedessä. Tilavuus 22 cl. Konepesun kestävä.');
-
-insert into product(name,cost,price,groupid,pic,description)
-values('Taikalasi: Juomalasi', 6,29.90,3,'https://iittala.scene7.com/is/image/iittala/?qlt=90&op_usm=1.2,1,0,0&src=is{iittala/iittala-taika-tumbler-38_cl-clear?size=3800,3800&wid=2000&hei=2000&scl=2.4}&extend=100,100,100,100',
-'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Tilavuus 38 cl. Konepesun kestävä.');
-
-insert into product(name,cost,price,groupid,pic,description)
 values('Kartio: Juomalasi', 5,13.90,3,'https://i.ibb.co/GV8bVGT/kartiojuomalasi.jpg',
 'Kaj Franckin suunnittelema klassinen ja geometrinen juomalasi sopii täydellisesti arkikäyttöön. Kirkas. Tilavuus 21 cl. Konepesun kestävä.');
 
