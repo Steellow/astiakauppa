@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // eslint-disable-next-line
 import styles from "../styles/styles.css";
 
-export default function Footer({user}) {
+export default function Footer({ user }) {
   return (
     <footer className="footer row bg-dark">
       <div className="col-6 text-white">
@@ -27,14 +27,17 @@ export default function Footer({user}) {
           <i className="fa fa-twitter"></i>
         </a>
         {/* pitää katsoa lisäksi onko user.admin 1 */}
-        {(user !== null) ?
-          (user['admin'] === 1) ? 
-          <Link to="/admin" className="nav-link" style={{ color: "white" }}>
-            Hallintapaneeli
-          </Link> : <div></div>
-          : <div></div>
-        }
-        
+        {user !== null ? (
+          user["admin"] === 1 ? (
+            <Link to="/admin" className="nav-link" style={{ color: "white" }}>
+              Hallintapaneeli
+            </Link>
+          ) : (
+            <></>
+          )
+        ) : (
+          <></>
+        )}
       </p>
 
       <p className="col-12 text-center bg-secondary text-white">
