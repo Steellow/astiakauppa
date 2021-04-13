@@ -1,10 +1,11 @@
 import React from "react";
 import LogIn from "../components/LogIn";
 
-export default function LogInPage() {
+export default function LogInPage({setUser}) {
+
   return (
     <div className="row">
-      <LogIn />
+      <LogIn setUser={setUser}/>
     </div>
   );
 }

@@ -16,6 +16,7 @@ import AdminSingleOrder from "./pages/AdminSingleOrder";
 
 function App() {
   const [allProducts, setItems] = useState([]);
+  const [user, setUser] = useState(null);
 
   const URL = "http://localhost/astiakauppa/retrieve.php";
 
@@ -47,7 +48,11 @@ function App() {
         <Switch>
           <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} />
           <Route path="/ostoskori" component={ShoppingCartPage} />
-          <Route path="/kirjaudu" component={LogInPage} />
+          <Route path="/kirjaudu" render={() =>
+            <LogInPage
+              setUser={setUser}
+            />
+          }/>
           <Route path="/asiakastiedot" component={PromptLogin} />
           <Route path="/rekisteri" component={RegistrationPage} />
           <Route path="/checkout" component={CheckOutPage} />
