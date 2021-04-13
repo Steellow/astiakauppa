@@ -27,7 +27,7 @@ export default function SingleProduct({ item, handleRemove, callBack }) {
         <h2>{product.name}</h2>
       </Link>
       <div className="col-3 col-md-2 d-flex justify-content-between flex-column align-end text-right p-0">
-        <h4 className="align-right">{product.price}€</h4>
+        <h4 className="align-right">{product.discprice || product.price}€</h4>
         <div>
           <div className="mr-0 ml-auto">
             <input type="button" value="-" className="d-inline " onClick={decrease} />
