@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router";
 import shoppingCart from "../util/ShoppingCart";
 
 export default function SingleProductPage({ match }) {
@@ -7,6 +8,8 @@ export default function SingleProductPage({ match }) {
   const [discPrice, setDiscPrice] = useState();
 
   const URL = "http://localhost/astiakauppa/";
+
+  const history = useHistory();
 
   useEffect(() => {
     let status = 0;
@@ -38,8 +41,47 @@ export default function SingleProductPage({ match }) {
   };
 
   const addSale = (e) => {
+    let status = 0;
     e.preventDefault();
-    console.log(discPrice);
+    fetch(`http://localhost/astiakauppa/addDiscount.php?discPrice=${discPrice}&id=${product.id}`)
+      .then((response) => {
+        status = parseInt(response.status);
+        return response;
+      })
+      .then(
+        (response) => {
+          if (status === 200) {
+            history.go(0);
+          } else {
+            alert(response.error);
+          }
+        },
+        (error) => {
+          alert(error);
+        }
+      );
+  };
+
+  const deleteSale = (e) => {
+    let status = 0;
+    e.preventDefault();
+    fetch(`http://localhost/astiakauppa/addDiscount.php?discPrice=${0}&id=${product.id}`)
+      .then((response) => {
+        status = parseInt(response.status);
+        return response;
+      })
+      .then(
+        (response) => {
+          if (status === 200) {
+            history.go(0);
+          } else {
+            alert(response.error);
+          }
+        },
+        (error) => {
+          alert(error);
+        }
+      );
   };
 
   return (
@@ -62,7 +104,9 @@ export default function SingleProductPage({ match }) {
             </div>
             {/* 👇👇👇 TODO: Show this button only if logged in as admin */}
             {product.discprice ? (
-              <button className="btn btn-danger mb-2">Poista alennus</button>
+              <button className="btn btn-danger mb-2 col-12" onClick={deleteSale}>
+                Poista alennus
+              </button>
             ) : (
               <div className="input-group mb-3">
                 <input
