@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'inc/functions.php';
 require_once 'inc/headers.php';
 
@@ -14,8 +15,10 @@ try {
 
   $db = openDb();
   // katsotaan onko sähköposti jo tietokannassa
-  $emailsql = "SELECT * FROM users WHERE email = '$email'";
-  $check = $db->query($emailsql);
+  $emailsql = "SELECT * FROM users WHERE email = :email";
+  $check = $db->prepare($emailsql);
+  $check->bindValue(':email', $email, PDO::PARAM_STR);
+  $check->execute();
   $results = $check->fetchAll(PDO::FETCH_ASSOC);
 
   // jos sposti ei ole tietokannassa, rekisteröidään normaalisti

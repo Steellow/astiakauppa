@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logo from "../img/logo.png";
 import { Link, useHistory } from "react-router-dom";
 
-export default function Header() {
+export default function Header({user}) {
   const [criteria, setCriteria] = useState("");
   const history = useHistory();
 
@@ -71,12 +71,16 @@ export default function Header() {
               </div>
               <li className="nav-item ">
                 <div className="d-flex justify-content-center">
-                  <Link to="/kirjaudu" className="nav-link" style={{ color: "white" }}>
+                <Link to="/ostoskori" className="nav-link" style={{ color: "white" }}>
+                    <i className="fa fa-lg fa-lg fa-shopping-cart mx-2" aria-label="Ostoskori"></i>
+                  </Link>
+                  {(user !== null) ? <a href="/" className="nav-link" style={{ color: "white" }}>
+                    <i className="fa fa-lg fa-sign-out mx-2" aria-label="Kirjaudu ulos"></i>
+                  </a>:<Link to="/kirjaudu" className="nav-link" style={{ color: "white" }}>
                     <i className="fa fa-lg fa-sign-in mx-2" aria-label="Kirjaudu sisään"></i>
-                  </Link>
-                  <Link to="/ostoskori" className="nav-link" style={{ color: "white" }}>
-                    <i className="fa fa-lg fa-lg fa-shopping-cart" aria-label="Ostoskori"></i>
-                  </Link>
+                  </Link>}
+                  
+                  
                 </div>
               </li>
             </ul>

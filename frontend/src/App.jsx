@@ -17,7 +17,7 @@ import AdminSingleOrder from "./pages/AdminSingleOrder";
 function App() {
   const [allProducts, setItems] = useState([]);
   const [user, setUser] = useState(null);
-
+ console.log(user);
   const URL = "http://localhost/astiakauppa/retrieve.php";
 
   useEffect(() => {
@@ -44,7 +44,7 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <Header />
+        <Header user={user}/>
         <Switch>
           <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} />
           <Route path="/ostoskori" component={ShoppingCartPage} />
@@ -74,7 +74,7 @@ function App() {
           <Route exact path="/admin" component={AdminDashboard} />
           <Route path="/admin/tilaus/:ordernum" component={AdminSingleOrder} />
         </Switch>
-        <Footer />
+        <Footer user={user}/>
       </div>
     </Router>
   );
