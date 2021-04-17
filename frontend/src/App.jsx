@@ -13,11 +13,11 @@ import RegistrationSuccess from "./pages/RegistrationSuccess";
 import SearchResults from "./pages/SearchResults";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminSingleOrder from "./pages/AdminSingleOrder";
+import placeholderProducts from "./util/PlaceholderProducts";
 
 function App() {
-  const [allProducts, setItems] = useState([]);
+  const [allProducts, setItems] = useState(placeholderProducts);
   const [user, setUser] = useState(null);
- console.log(user);
   const URL = "http://localhost/astiakauppa/retrieve.php";
 
   useEffect(() => {
@@ -44,15 +44,11 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <Header user={user}/>
+        <Header user={user} />
         <Switch>
           <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} />
           <Route path="/ostoskori" component={ShoppingCartPage} />
-          <Route path="/kirjaudu" render={() =>
-            <LogInPage
-              setUser={setUser}
-            />
-          }/>
+          <Route path="/kirjaudu" render={() => <LogInPage setUser={setUser} />} />
           <Route path="/asiakastiedot" component={PromptLogin} />
           <Route path="/rekisteri" component={RegistrationPage} />
           <Route path="/checkout" component={CheckOutPage} />
@@ -74,7 +70,7 @@ function App() {
           <Route exact path="/admin" component={AdminDashboard} />
           <Route path="/admin/tilaus/:ordernum" component={AdminSingleOrder} />
         </Switch>
-        <Footer user={user}/>
+        <Footer user={user} />
       </div>
     </Router>
   );

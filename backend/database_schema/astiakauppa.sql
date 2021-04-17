@@ -85,122 +85,122 @@ values('Lasit');
 -- mukit
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Taikuri', 5,13.90,2,'https://i.ibb.co/qY5T4fz/taikuri.png',
+values('Muumimuki: Taikuri', 5,13.90,2,'http://localhost/astiakauppa/img/taikuri.png',
 'Monivärinen Muumimuki. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Lumihevonen', 5,13.90,2,'https://i.ibb.co/xHvVLnV/talvi.png',
+values('Muumimuki: Lumihevonen', 5,13.90,2,'http://localhost/astiakauppa/img/talvi.png',
 'Vuoden 2016 sesonkimuki, jonka kuvitus pohjautuu Taikatalvi-kirjaan. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Talviuni', 5,16.90,2,'https://i.ibb.co/NxMpPp5/uni.png',
+values('Muumimuki: Talviuni', 5,16.90,2,'http://localhost/astiakauppa/img/uni.png',
 'Talven 2015 sesonkituote. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Seikkailu muutto', 5,14.90,2,'https://i.ibb.co/B42BBM9/pyrst-t-hti.png',
+values('Muumimuki: Seikkailu muutto', 5,14.90,2,'http://localhost/astiakauppa/img/pyrst-t-hti.png',
 'Muumit pakenevat pyrstötähteä ja ottavat mukaansa vain tärkeimmät tavarat. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Muumipappa tuumiskelee',5,10.90,2,'https://i.ibb.co/YyrRmPb/pappa.png',
+values('Muumimuki: Muumipappa tuumiskelee',5,10.90,2,'http://localhost/astiakauppa/img/pappa.png',
 'Yksi tunnetuimmista Muumimukeista. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Nuuskamuikkunen',5,14.90,2,'https://i.ibb.co/QH7vnQv/nuuskamuikkunen.png',
+values('Muumimuki: Nuuskamuikkunen',5,14.90,2,'http://localhost/astiakauppa/img/nuuskamuikkunen.png',
 'Ensimmäinen Nuuskamuikkunen-muki, joka oli valmistuksessa yli vuosikymmenen. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Muumitalo',5,17.90,2,'https://i.ibb.co/MPKQH54/muumitalo.png',
+values('Muumimuki: Muumitalo',5,17.90,2,'http://localhost/astiakauppa/img/muumitalo.png',
 '"Kuka asuu Muumitalossa"-tarinaan pohjautuva Muumitalo-muki. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Muumipappa sininen',5,12.90,2,'https://i.ibb.co/9NMbxtK/muumipappa.png',
+values('Muumimuki: Muumipappa sininen',5,12.90,2,'http://localhost/astiakauppa/img/muumipappa.png',
 'Muumipappa purjehtimassa. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Ystävyys',5,21.90,2,'https://i.ibb.co/zsdJ8Lm/kukka.png',
+values('Muumimuki: Ystävyys',5,21.90,2,'http://localhost/astiakauppa/img/kukka.png',
 'Ystävyydestä kertova Muumimuki. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Hetki Rannalla',5,21.90,2,'https://i.ibb.co/vjXtpqx/kalastus.png',
+values('Muumimuki: Hetki Rannalla',5,21.90,2,'http://localhost/astiakauppa/img/kalastus.png',
 'Värikäs ja kesäinen Muumimuki. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Kuusen alla',5,21.90,2,'https://i.ibb.co/XXQwDFr/joulu.png',
+values('Muumimuki: Kuusen alla',5,21.90,2,'http://localhost/astiakauppa/img/joulu.png',
 'Muumit juhlimassa joulua. TIlavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Haisuli',5,13.90,2,'https://i.ibb.co/t45B1Nf/haisuli.png',
+values('Muumimuki: Haisuli',5,13.90,2,'http://localhost/astiakauppa/img/haisuli.png',
 'Haisuli tekemässä kepposia. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Kesäteatteri',5,13.90,2,'https://i.ibb.co/XtnbgKn/teatteri.png',
+values('Muumimuki: Kesäteatteri',5,13.90,2,'http://localhost/astiakauppa/img/teatteri.png',
 'Värikäs ja kesäinen Muumimuki. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumimuki: Perhe',5,13.90,2, 'https://i.ibb.co/D1hbwnX/perhe.png',
+values('Muumimuki: Perhe',5,13.90,2, 'http://localhost/astiakauppa/img/perhe.png',
 'Perheen tärkeyytä kuvaava Muumimuki. Tilavuus 0,3 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Tanssimuki: Runsas tanssi',5,19.90,2, 'https://i.ibb.co/mNGYbb7/taikatanssimuki.jpg',
+values('Tanssimuki: Runsas tanssi',5,19.90,2, 'http://localhost/astiakauppa/img/taikatanssimuki.jpg',
 'Ovela kettu-oopperan inspiroiva värikäs muki. Tilavuus 0,4 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Taikamuki: Satumetsä',5,14.90,2, 'https://i.ibb.co/fS74HBN/satumets-muki.jpg',
+values('Taikamuki: Satumetsä',5,14.90,2, 'http://localhost/astiakauppa/img/satumets-muki.jpg',
 'Mystisen metsän värit hehkuu kesän väreissä. Tilavuus 0,4 l. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Taikamuki: Mustavalkoinen',5,14.90,2, 'https://i.ibb.co/Rgz2sg1/taikamuki.jpg',
+values('Taikamuki: Mustavalkoinen',5,14.90,2, 'http://localhost/astiakauppa/img/taikamuki.jpg',
 'Kansanperinteiden ja satujen värikkäästä maailmasta inspiroituva Taika-sarjan muki. Tilavuus 0,4 l. Konepesun kestävä.');
 
 -- lautaset
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumilautanen: syvä Tiuhti ja Viuhti', 7,26.90,1,'https://i.ibb.co/y5dZM0n/tiuhtijaviuhti.png',
+values('Muumilautanen: syvä Tiuhti ja Viuhti', 7,26.90,1,'http://localhost/astiakauppa/img/tiuhtijaviuhti.png',
 'Tiuhti ja Viuhti salaperäisen matkalaukun kanssa. ⌀15cm Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumilautanen: syvä Mymmeli', 7,18.90,1,'https://i.ibb.co/rZ2cM3n/mymmeli.png',
+values('Muumilautanen: syvä Mymmeli', 7,18.90,1,'http://localhost/astiakauppa/img/mymmeli.png',
 'Mymmeli unelmoimassa elämänsä rakkauden löytämisestä. ⌀15cm Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumilautanen: syvä Nuuskamuikkunen', 7,23.90,1,'https://i.ibb.co/9ZWkMbm/muikkune.png',
+values('Muumilautanen: syvä Nuuskamuikkunen', 7,23.90,1,'http://localhost/astiakauppa/img/muikkune.png',
 'Nuuksamuikkunen soittamassa pilliä. ⌀15cm Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumilautanen: syvä Muumimamma ja Marjat', 7,23.90,1,'https://i.ibb.co/5jF3bMb/mamma.png',
+values('Muumilautanen: syvä Muumimamma ja Marjat', 7,23.90,1,'http://localhost/astiakauppa/img/mamma.png',
 'Muumimamma ja Marjat. ⌀15cm Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumilautanen: syvä Talviuni', 7,26.90,1,'https://i.ibb.co/gM7mSv9/talviuni.png',
+values('Muumilautanen: syvä Talviuni', 7,26.90,1,'http://localhost/astiakauppa/img/talviuni.png',
 'Muumit viettämässä talviunta. ⌀15cm Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Muumilautanen: syvä taikuri', 7,21.90,1,'https://i.ibb.co/sqK8DYn/taikuri-kulho.png',
+values('Muumilautanen: syvä taikuri', 7,21.90,1,'http://localhost/astiakauppa/img/taikuri-kulho.png',
 '⌀15cm Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Kastehelmi: Lautanen', 7,12.95,1,'https://i.ibb.co/tm4WrtK/kastehelmilautanen.jpg',
+values('Kastehelmi: Lautanen', 7,12.95,1,'http://localhost/astiakauppa/img/kastehelmilautanen.jpg',
 'Oiva Toikan suunnittelema kastehelmi kuvastaa lasipisaroita, jotka heijastavat kauniisti valoa. Kirkas. ⌀17cm. Mikrouunin ja konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Taikalautanen: Taika mustavalkoinen kulho', 10,28.50,1,'https://i.ibb.co/0jHzZ6J/taikamurokulho.jpg',
+values('Taikalautanen: Taika mustavalkoinen kulho', 10,28.50,1,'http://localhost/astiakauppa/img/taikamurokulho.jpg',
 'Klaus Haapaniemen suunnittelema Taika on saanut inspiraationsa kansanperinteen ja satujen värikkäästä maailmasta. Mustavalkoinen. 0.6 l. Mikrouunin ja konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Teemalautanen: musta 21 cm', 7,11.90,1,'https://i.ibb.co/kHtyFrN/mustalautanen.jpg',
+values('Teemalautanen: musta 21 cm', 7,11.90,1,'http://localhost/astiakauppa/img/mustalautanen.jpg',
 'Selkeä muotoinen ja tyylikäs Kaj Franckin suunnittelema Teema-sarjan lautanen. Musta. 21 cm. Mikrouunin ja konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Teemalautanen: musta syvä 21 cm', 7,17.90,1,'https://i.ibb.co/HdSW0yJ/syvamustalautanen.jpg',
+values('Teemalautanen: musta syvä 21 cm', 7,17.90,1,'http://localhost/astiakauppa/img/syvamustalautanen.jpg',
 'Selkeä muotoinen ja tyylikäs Kaj Franckin suunnittelema Teema-sarjan syvä lautanen. Musta. Syvä 21 cm. Mikrouunin ja konepesun kestävä.');
 
 -- lasit
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Kartio: Juomalasi', 5,13.90,3,'https://i.ibb.co/GV8bVGT/kartiojuomalasi.jpg',
+values('Kartio: Juomalasi', 5,13.90,3,'http://localhost/astiakauppa/img/kartiojuomalasi.jpg',
 'Kaj Franckin suunnittelema klassinen ja geometrinen juomalasi sopii täydellisesti arkikäyttöön. Kirkas. Tilavuus 21 cl. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Kalinka: Juomalasi', 8,17.00,3,'https://i.ibb.co/YdvLWm9/kalinkalasit.jpg',
+values('Kalinka: Juomalasi', 8,17.00,3,'http://localhost/astiakauppa/img/kalinkalasit.jpg',
 '80-luvulla Timo Sarpanevan suunnittelema Kalinka on heleä ja yksityiskohtainen juomalasi. Kirkas. Tilavuus 20 cl. Vain käsinpesu.');
 
