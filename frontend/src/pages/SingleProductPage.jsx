@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import shoppingCart from "../util/ShoppingCart";
+import ReactPlaceholder from "react-placeholder";
+import imagePlaceholder from "../util/ImagePlaceholder";
 
 export default function SingleProductPage({ match }) {
   const [product, setProduct] = useState({});
@@ -88,16 +90,20 @@ export default function SingleProductPage({ match }) {
     <div className="container card my-3">
       <div className="row">
         <div className="col-12 col-md-6">
-          <img src={product.pic} alt={product.name} className="img-fluid mt-2" />
+          <ReactPlaceholder customPlaceholder={imagePlaceholder} ready={Object.keys(product).length > 0}>
+            <img src={product.pic} alt={product.name} className="img-fluid mt-2" />
+          </ReactPlaceholder>
         </div>
         <div className="col-12 col-md-6 mt-3 d-flex flex-column justify-content-between">
-          <div>
-            <h1 className="font-weight-bold">{product.name}</h1>
-            <p>{product.description}</p>
-          </div>
+          <ReactPlaceholder type="text" rows={5} ready={Object.keys(product).length > 0}>
+            <div>
+              <h1 className="font-weight-bold">{product.name}</h1>
+              <p>{product.description}</p>
+            </div>
+          </ReactPlaceholder>
           <div>
             <div className="row justify-content-between d-flex align-items-center my-3">
-              <h3 className="rounded col-4 col-lg-3 text-center align-middle">{product.discprice || product.price}€</h3>
+              <h3 className="rounded col-4 col-lg-3 text-center align-middle">{product.discprice || product.price || 12.34}€</h3>
               <button className="btn btn-primary col-7 col-lg-8 p-3 mr-3" onClick={() => shoppingCart.addItem(product)}>
                 Lisää ostoskoriin <i className="fa fa-shopping-basket"></i>
               </button>

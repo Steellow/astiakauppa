@@ -1,15 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ReactPlaceholder from "react-placeholder";
-import { RectShape } from "react-placeholder/lib/placeholders";
+import imagePlaceholder from "../util/ImagePlaceholder";
 
 export default function SingleProduct({ product }) {
-  const imagePlaceholder = (
-    <div className="card-img-top p-2 ">
-      <RectShape color="#CDCDCD" className="rounded" />
-    </div>
-  );
-
   return (
     <div className="col-12 col-sm-6 col-md-4 col-lg-3 my-2">
       <Link to={`/tuote/${product.id}`} style={{ color: "inherit", textDecoration: "inherit" }}>
