@@ -5,7 +5,7 @@ import shoppingCart from "../util/ShoppingCart";
 import ReactPlaceholder from "react-placeholder";
 import imagePlaceholder from "../util/ImagePlaceholder";
 
-export default function SingleProductPage({ match }) {
+export default function SingleProductPage({ match, user }) {
   const [product, setProduct] = useState({});
   const [discPrice, setDiscPrice] = useState();
 
@@ -108,26 +108,29 @@ export default function SingleProductPage({ match }) {
                 Lisää ostoskoriin <i className="fa fa-shopping-basket"></i>
               </button>
             </div>
-            {/* 👇👇👇 TODO: Show this button only if logged in as admin */}
-            {product.discprice ? (
-              <button className="btn btn-danger mb-2 col-12" onClick={deleteSale}>
-                Poista alennus
-              </button>
-            ) : (
-              <div className="input-group mb-3">
-                <input
-                  type="number"
-                  onChange={handleInputChange}
-                  placeholder="Alennettu hinta (€)"
-                  aria-label="Alennettu hinta (€)"
-                  className="form-control"
-                />
-                <div className="input-group-append">
-                  <button className="btn btn-outline-secondary" onClick={addSale}>
-                    Lisää alennukseen
-                  </button>
+            {user !== null && user.admin === "1" ? (
+              product.discprice ? (
+                <button className="btn btn-danger mb-2 col-12" onClick={deleteSale}>
+                  Poista alennus
+                </button>
+              ) : (
+                <div className="input-group mb-3">
+                  <input
+                    type="number"
+                    onChange={handleInputChange}
+                    placeholder="Alennettu hinta (€)"
+                    aria-label="Alennettu hinta (€)"
+                    className="form-control"
+                  />
+                  <div className="input-group-append">
+                    <button className="btn btn-outline-secondary" onClick={addSale}>
+                      Lisää alennukseen
+                    </button>
+                  </div>
                 </div>
-              </div>
+              )
+            ) : (
+              <></>
             )}
           </div>
         </div>

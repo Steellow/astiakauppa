@@ -66,7 +66,7 @@ function App() {
             render={(props) => <Products products={allProducts.filter((prod) => Number(prod.groupid) === Number(3))} {...props} />}
           />
           <Route path="/haku/:searchterm" component={SearchResults} />
-          <Route path="/tuote/:id" component={SingleProductPage} />
+          <Route path="/tuote/:id" render={(props) => <SingleProductPage user={user} {...props} />} />
           <Route exact path="/admin" component={AdminDashboard} />
           <Route path="/admin/tilaus/:ordernum" component={AdminSingleOrder} />
         </Switch>

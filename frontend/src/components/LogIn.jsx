@@ -1,35 +1,34 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function LogIn({setUser}) {
-  const [email,setEmail] = useState('');
-  const [password,setPassword] = useState('');
+export default function LogIn({ setUser }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   async function login(e) {
     e.preventDefault();
     const formData = new FormData();
 
-    formData.append('email',email);
-    formData.append('password',password);
+    formData.append("email", email);
+    formData.append("password", password);
 
     const config = {
-        method: 'POST',
-        credentials: 'include',
-        headers: {
-            'Accept' : 'application/json',
-
-        },
-        body: formData
-    }
-    const response = await fetch('http://localhost/astiakauppa/login.php',config);
+      method: "POST",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+      },
+      body: formData,
+    };
+    const response = await fetch("http://localhost/astiakauppa/login.php", config);
     const json = await response.json();
     console.log(json);
     if (response.ok) {
-        setUser(json);
-        alert("login successful");
-        //  history.push('/');
+      setUser(json);
+      alert("login successful");
+      //  history.push('/');
     } else {
-        alert("Error logging in.");
+      alert("Error logging in.");
     }
   }
   return (
@@ -45,7 +44,7 @@ export default function LogIn({setUser}) {
             aria-describedby="emailHelp"
             placeholder="Syötä sähköpostiosoite"
             value={email}
-            onChange={e => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="form-group text-left">
@@ -56,7 +55,7 @@ export default function LogIn({setUser}) {
             id="password"
             placeholder="Salasana"
             value={password}
-            onChange={e => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <button type="submit" className="btn btn-success">
