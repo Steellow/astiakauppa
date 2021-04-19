@@ -48,11 +48,11 @@ function App() {
         <Header user={user} />
         <Switch>
           <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} />
-          <Route path="/ostoskori" component={ShoppingCartPage} />
+          <Route path="/ostoskori" render={(props) => <ShoppingCartPage user={user} {...props} />} />
           <Route path="/kirjaudu" render={() => <LogInPage setUser={setUser} />} />
           <Route path="/asiakastiedot" component={PromptLogin} />
           <Route path="/rekisteri" component={RegistrationPage} />
-          <Route path="/checkout" component={CheckOutPage} />
+          <Route path="/checkout" render={(props) => <CheckOutPage user={user} {...props} />} />
           <Route path="/rekisteriok" component={RegistrationSuccess} />
           <Route path="/uloskirjautuminen" render={() => <Logout setUser={setUser}/>} />
           <Route
@@ -68,7 +68,7 @@ function App() {
             render={(props) => <Products products={allProducts.filter((prod) => Number(prod.groupid) === Number(3))} {...props} />}
           />
           <Route path="/haku/:searchterm" component={SearchResults} />
-          <Route path="/tuote/:id" component={SingleProductPage} />
+          <Route path="/tuote/:id" render={(props) => <SingleProductPage user={user} {...props} />} />
           <Route exact path="/admin" component={AdminDashboard} />
           <Route path="/admin/tilaus/:ordernum" component={AdminSingleOrder} />
         </Switch>

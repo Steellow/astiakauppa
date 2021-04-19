@@ -3,7 +3,7 @@ import ShoppingCartItem from "../components/ShoppingCartItem";
 import { Link } from "react-router-dom";
 import shoppingCart from "../util/ShoppingCart";
 
-function ShoppingCartPage() {
+function ShoppingCartPage({ user }) {
   const [items, setItems] = useState(shoppingCart.getItems());
   const [total, setTotal] = useState(0);
 
@@ -39,10 +39,15 @@ function ShoppingCartPage() {
         <div className="bg-dark col-12 justify-content-between d-flex summary align-middle">
           <p className="d-inline-block m-4">Yhteensä</p>
           <p className="d-inline-block m-4">{total.toFixed(2)}€</p>
-          <Link to="/asiakastiedot" className="my-3 btn btn-success pt-3" type="button">
-            {/* TODO: jos kirjautunut sisään niin skippaa kirjaudu sivu ja mee suoraan /checkout */}
-            Jatka tilaukseen
-          </Link>
+          {user ? (
+            <Link to="/checkout" className="my-3 btn btn-success pt-3" type="button">
+              Jatka tilaukseen
+            </Link>
+          ) : (
+            <Link to="/asiakastiedot" className="my-3 btn btn-success pt-3" type="button">
+              Jatka tilaukseen
+            </Link>
+          )}
         </div>
       </div>
     </div>
