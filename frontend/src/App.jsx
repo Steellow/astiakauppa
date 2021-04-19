@@ -51,7 +51,7 @@ function App() {
           <Route path="/kirjaudu" render={() => <LogInPage setUser={setUser} />} />
           <Route path="/asiakastiedot" component={PromptLogin} />
           <Route path="/rekisteri" component={RegistrationPage} />
-          <Route path="/checkout" component={CheckOutPage} />
+          <Route path="/checkout" render={(props) => <CheckOutPage user={user} {...props} />} />
           <Route path="/rekisteriok" component={RegistrationSuccess} />
           <Route
             path="/lautaset"

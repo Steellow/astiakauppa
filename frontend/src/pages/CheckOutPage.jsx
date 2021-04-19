@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import shoppingCart from "../util/ShoppingCart";
 import CheckOutCart from "../components/CheckOutCart";
 
-export default function CheckOutPage() {
+export default function CheckOutPage({ user }) {
   const URLI = "http://localhost/astiakauppa/checkout.php";
   const [items, setItems] = useState(shoppingCart.getItems());
   const [total, setTotal] = useState(0);
@@ -39,10 +39,26 @@ export default function CheckOutPage() {
               </label>
               <div className="row">
                 <div className="col-md-6">
-                  <input type="text" className="form-control" id="firstname" name="firstname" required placeholder="Etunimi" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="firstname"
+                    name="firstname"
+                    required
+                    placeholder="Etunimi"
+                    value={user !== null ? user.firstname : ""}
+                  />
                 </div>
                 <div className="form-group col-md-6">
-                  <input type="text" className="form-control" id="lastname" name="lastname" required placeholder="Sukunimi" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="lastname"
+                    name="lastname"
+                    required
+                    placeholder="Sukunimi"
+                    value={user !== null ? user.lastname : ""}
+                  />
                 </div>
               </div>
             </div>
@@ -52,7 +68,15 @@ export default function CheckOutPage() {
                 <label for="email">
                   <i className="fa fa-envelope"></i> Sähköposti
                 </label>
-                <input type="email" className="form-control" id="email" name="email" required placeholder="Sähköpostiosoite" />
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="Sähköpostiosoite"
+                  value={user !== null ? user.email : ""}
+                />
               </div>
             </div>
 
@@ -60,17 +84,25 @@ export default function CheckOutPage() {
               <label for="address">
                 <i className="fa fa-address-card-o"></i> Osoite
               </label>
-              <input type="text" className="form-control" id="address" name="address" required placeholder="Katuosoite" />
+              <input
+                type="text"
+                className="form-control"
+                id="address"
+                name="address"
+                required
+                placeholder="Katuosoite"
+                value={user !== null ? user.address : ""}
+              />
             </div>
 
             <div className="row">
               <div className="col-md-6 mb-3">
                 <label for="city">Kaupunki</label>
-                <input type="text" className="form-control" id="city" name="city" required />
+                <input type="text" className="form-control" id="city" name="city" required value={user !== null ? user.city : ""} />
               </div>
               <div className="form-group col-md-5">
                 <label for="zip">Postinumero</label>
-                <input type="text" className="form-control" id="zip" name="postalcode" required />
+                <input type="text" className="form-control" id="zip" name="postalcode" required value={user !== null ? user.postalcode : ""} />
               </div>
 
               <div className="form-group">
@@ -83,19 +115,19 @@ export default function CheckOutPage() {
               </div>
 
               {/* Toimitustapa */}
-              <div class="form-group">
+              <div className="form-group">
                 <h4>Toimitustapa</h4>
 
-                <div class="form-group">
-                  <div class="custom-control custom-radio">
-                    <input id="toimitusKotiin" name="toimitusTapa" type="radio" class="custom-control-input" />
-                    <label class="custom-control-label" for="toimitusKotiin">
+                <div className="form-group">
+                  <div className="custom-control custom-radio">
+                    <input id="toimitusKotiin" name="toimitusTapa" type="radio" className="custom-control-input" />
+                    <label className="custom-control-label" for="toimitusKotiin">
                       Toimitus kotiin
                     </label>
                   </div>
-                  <div class="custom-control custom-radio">
-                    <input id="postitoimiPaikka" name="toimitusTapa" type="radio" class="custom-control-input" />
-                    <label class="custom-control-label" for="postitoimiPaikka">
+                  <div className="custom-control custom-radio">
+                    <input id="postitoimiPaikka" name="toimitusTapa" type="radio" className="custom-control-input" />
+                    <label className="custom-control-label" for="postitoimiPaikka">
                       Toimitus postitoimipaikkaan
                     </label>
                   </div>
