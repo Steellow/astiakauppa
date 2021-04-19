@@ -14,6 +14,7 @@ import SearchResults from "./pages/SearchResults";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminSingleOrder from "./pages/AdminSingleOrder";
 import placeholderProducts from "./util/PlaceholderProducts";
+import Logout from "./components/LogOut";
 
 function App() {
   const [allProducts, setItems] = useState(placeholderProducts);
@@ -53,6 +54,7 @@ function App() {
           <Route path="/rekisteri" component={RegistrationPage} />
           <Route path="/checkout" component={CheckOutPage} />
           <Route path="/rekisteriok" component={RegistrationSuccess} />
+          <Route path="/uloskirjautuminen" render={() => <Logout setUser={setUser}/>} />
           <Route
             path="/lautaset"
             render={(props) => <Products products={allProducts.filter((prod) => Number(prod.groupid) === Number(1))} {...props} />}
