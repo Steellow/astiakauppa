@@ -22,7 +22,7 @@ export default function LogIn({ setUser }) {
     };
     const response = await fetch("http://localhost/astiakauppa/login.php", config);
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
     if (response.ok) {
       setUser(json);
       alert("login successful");
