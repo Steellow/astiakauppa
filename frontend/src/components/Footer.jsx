@@ -28,13 +28,9 @@ export default function Footer({ user }) {
         </a>
         {/* pitää katsoa lisäksi onko user.admin 1 */}
         {user !== null && user.admin === "1" ? (
-          user["admin"] === 1 ? (
-            <Link to="/admin" className="nav-link" style={{ color: "white" }}>
-              Hallintapaneeli
-            </Link>
-          ) : (
-            <></>
-          )
+          <Link to="/admin" className="nav-link" style={{ color: "white" }}>
+            Hallintapaneeli
+          </Link>
         ) : (
           <></>
         )}
