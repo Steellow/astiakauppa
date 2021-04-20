@@ -2,10 +2,20 @@ import React, { useState, useEffect, useCallback } from "react";
 import shoppingCart from "../util/ShoppingCart";
 import CheckOutCart from "../components/CheckOutCart";
 
-export default function CheckOutPage({ user }) {
+export default function CheckOutPage({ user, empty }) {
   const URLI = "http://localhost/astiakauppa/checkout.php";
   const [items, setItems] = useState(shoppingCart.getItems());
   const [total, setTotal] = useState(0);
+  const [finished, setFinished] = useState(false);
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
+  const [city, setCity] = useState('');
+  const [postalcode, setPostalcode] = useState('');
+
+
+
 
   const calcTotal = useCallback(() => {
     let i = 0;
@@ -20,6 +30,40 @@ export default function CheckOutPage({ user }) {
     calcTotal();
   }, [calcTotal]);
 
+  function checkout(e) {
+    e.preventDefault();
+    console.log(items);
+    fetch(URLI,{
+      method: 'POST',
+      header: {
+        'Accept': 'application/json', 
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+      cart: items,
+      firstname: firstname,
+      lastname: lastname,
+      email: email,
+      address: address,
+      city: city,
+      postalcode: postalcode
+    })
+    })
+  .then (res => {
+  return res.json();
+  })
+  .then (
+    (res) => {
+      console.log(res);
+      // tilaus onnistui, seuraavaksi ostoskorin tyhjennys, jos ostoskori tyhjä->ei anna tehdä tilausta
+      // empty();
+      // setFinished(true);
+      }, (error) => {
+        alert(error);
+      }
+    )
+  }
+
   return (
     <div className="row">
       <div className="row col-12 m-3">
@@ -32,7 +76,7 @@ export default function CheckOutPage({ user }) {
       <div className="card col-12 col-md-5 login-card p-4 ml-5 mt-2 mb-5">
         <h4>Asiakastiedot</h4>
         <div>
-          <form action={URLI} method="POST">
+          <form onSubmit={checkout}>
             <div className="form-group">
               <label for="fullname">
                 <i className="fa fa-user"></i> Koko nimi
@@ -44,9 +88,10 @@ export default function CheckOutPage({ user }) {
                     className="form-control"
                     id="firstname"
                     name="firstname"
+                    onChange={e=>setFirstname(e.target.value)}
                     required
                     placeholder="Etunimi"
-                    value={user !== null ? user.firstname : ""}
+                    // value=""/* {user !== null ? user.firstname : ""} */
                   />
                 </div>
                 <div className="form-group col-md-6">
@@ -55,9 +100,10 @@ export default function CheckOutPage({ user }) {
                     className="form-control"
                     id="lastname"
                     name="lastname"
+                    onChange={e=>setLastname(e.target.value)}
                     required
                     placeholder="Sukunimi"
-                    value={user !== null ? user.lastname : ""}
+                    // value=""/* {user !== null ? user.lastname : ""} */
                   />
                 </div>
               </div>
@@ -73,9 +119,10 @@ export default function CheckOutPage({ user }) {
                   className="form-control"
                   id="email"
                   name="email"
+                  onChange={e=>setEmail(e.target.value)}
                   required
                   placeholder="Sähköpostiosoite"
-                  value={user !== null ? user.email : ""}
+                  // value=""/* {user !== null ? user.email : ""} */
                 />
               </div>
             </div>
@@ -89,20 +136,21 @@ export default function CheckOutPage({ user }) {
                 className="form-control"
                 id="address"
                 name="address"
+                onChange={e=>setAddress(e.target.value)}
                 required
                 placeholder="Katuosoite"
-                value={user !== null ? user.address : ""}
+                // value=""/* {user !== null ? user.address : ""} */
               />
             </div>
 
             <div className="row">
               <div className="col-md-6 mb-3">
                 <label for="city">Kaupunki</label>
-                <input type="text" className="form-control" id="city" name="city" required value={user !== null ? user.city : ""} />
+                <input type="text" className="form-control" id="city" name="city" onChange={e=>setCity(e.target.value)} required /* value=""{user !== null ? user.city : ""} */ />
               </div>
               <div className="form-group col-md-5">
                 <label for="zip">Postinumero</label>
-                <input type="text" className="form-control" id="zip" name="postalcode" required value={user !== null ? user.postalcode : ""} />
+                <input type="text" className="form-control" id="zip" name="postalcode" onChange={e=>setPostalcode(e.target.value)} required /* value=""{user !== null ? user.postalcode : ""} */ />
               </div>
 
               <div className="form-group">
@@ -178,9 +226,8 @@ export default function CheckOutPage({ user }) {
                 </div>
               </div>
               <hr className="mb-4" />
-              <button className="btn btn-success btn-lg btn-block" type="submit">
-                Maksa tilaus
-              </button>
+              
+              <input className="btn btn-success btn-lg btn-block" value="Maksa tilaus" type="submit"/>
             </div>
           </form>
         </div>

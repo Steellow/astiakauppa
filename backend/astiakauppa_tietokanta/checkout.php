@@ -1,16 +1,18 @@
 <?php
-session_start();
 require_once 'inc/functions.php';
 require_once 'inc/headers.php';
 
+
 try {
     
-  $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);
-  $lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING);
-  $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
-  $address = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
-  $city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);
-  $postalcode = filter_input(INPUT_POST, 'postalcode', FILTER_SANITIZE_NUMBER_INT);
+  $input = json_decode(file_get_contents('php://input'));
+  $firstname = filter_var($input->firstname, FILTER_SANITIZE_STRING);
+  $lastname = filter_var($input->lastname, FILTER_SANITIZE_STRING);
+  $email = filter_var($input->email, FILTER_SANITIZE_STRING);
+  $address = filter_var($input->address, FILTER_SANITIZE_STRING);
+  $city = filter_var($input->city, FILTER_SANITIZE_STRING);
+  $postalcode = filter_var($input->postalcode, FILTER_SANITIZE_NUMBER_INT);
+  $cart=$input->cart;
 
   $db = openDb();
   $db->beginTransaction();
@@ -25,28 +27,42 @@ try {
   $query->bindValue(':city', $city, PDO::PARAM_STR);
   $query->bindValue(':postalcode', $postalcode, PDO::PARAM_INT);
   $query->execute();
+  // var_dump(json_decode($cart));
+  // exit;
 
   // ORDER-TAULU
 
   $userid = $db->lastInsertId(); 
   $curdate = date("Y-m-d");
 
-  $order = $db->prepare("INSERT INTO orders (userid, orderdate) VALUES ((SELECT id from users WHERE `id`=?), ?)");
+  $order = $db->prepare("INSERT INTO orders (userid, orderdate) VALUES (?, ?)");
   $order->bindValue(1, $userid);
   $order->bindValue(2, $curdate);
   $order->execute();
 
-   // ORDER_ROW-TAULU 
+  // ORDER_ROW-TAULU 
 
-   $ordernum = $db->lastInsertId(); 
+  $ordernum = $db->lastInsertId(); 
+  // $cart = cart;
+  // var_dump(json_decode($cart));
+  // $input = json_decode(file_get_contents('php://input'));
+  // $cart = $input->cart;
+  $rownum = 1;
 
-   $orderrow = $db->prepare("INSERT INTO order_row (ordernum) SELECT ordernum from orders WHERE `ordernum`=?");
-   $orderrow->bindValue(1, $ordernum);
-   $orderrow->execute();
+  foreach ($cart as $product) {
+  $orderrow = $db->prepare("INSERT INTO order_row (ordernum, rownum, productid, amount) VALUES (:ordernum, :rownum, :productid, :amount)");
+  $orderrow->bindValue(':ordernum', $ordernum, PDO::PARAM_INT);
+  $orderrow->bindValue(':rownum', $rownum , PDO::PARAM_INT);
+  $orderrow->bindValue(':productid', $product->product->id, PDO::PARAM_INT);
+  $orderrow->bindValue(':amount', $product->amount, PDO::PARAM_INT);
+  // array_push($data,$product->product->id);
+  $orderrow->execute();
+  $rownum++;
+  }
 
   header('HTTP/1.1 200 OK');
-  Header("Location: http://localhost:3000/"); /* oma sivu onnistuneelle checkoutille? */
-  
+  // header("Location: http://localhost:3000/"); /* oma sivu onnistuneelle checkoutille? */
+
   $db->commit();
 }
   
