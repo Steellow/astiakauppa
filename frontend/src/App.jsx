@@ -22,6 +22,31 @@ function App () {
   const URL = 'http://localhost/astiakauppa/'
 
   useEffect(() => {
+    let status2 = 0
+      
+      fetch(URL + 'getSession.php', {
+        method: 'POST',
+        credentials: 'include'
+      })
+        .then(respo => {
+          status2 = parseInt(respo.status)
+          return respo
+        })
+
+        .then(
+          
+          respo => {
+            console.log(respo);
+            if (status2 === 200) {
+              console.log(respo)
+              setUser(respo)
+            }
+          },
+          error => {
+            alert(error)
+          }
+        )
+    
     let status = 0
     fetch(URL + 'retrieve.php')
       .then(response => {
@@ -40,28 +65,7 @@ function App () {
           alert(error)
         }
       )
-    // if (user === null) {
-    //   let status2 = 0
-    //   fetch(URL + 'getSession.php')
-    //     .then(respo => {
-    //       status2 = parseInt(respo.status)
-    //       return respo
-    //     })
-
-    //     .then(
-          
-    //       respo => {
-    //         console.log(respo);
-    //         if (status2 === 200) {
-    //           console.log(JSON.parse(respo))
-    //           setUser(respo)
-    //         }
-    //       },
-    //       error => {
-    //         alert(error)
-    //       }
-    //     )
-    // }
+   
   }, [])
 
   return (
