@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 
 export default function LogIn({ setUser }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  let location = useLocation();
+  const history = useHistory();
 
   async function login(e) {
     e.preventDefault();
@@ -25,8 +28,12 @@ export default function LogIn({ setUser }) {
     // console.log(json);
     if (response.ok) {
       setUser(json);
-      alert("login successful");
-      //  history.push('/');
+      alert("Kirjautuminen onnistui!");
+      if (typeof location.state !== "undefined" && location.state.ordering) {
+        history.push("/checkout");
+      } else {
+        history.push("/");
+      }
     } else {
       alert("Error logging in.");
     }
