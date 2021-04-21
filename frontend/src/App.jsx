@@ -89,7 +89,7 @@ function App() {
           />
           <Route path="/haku/:searchterm" component={SearchResults} />
           <Route path="/tuote/:id" render={(props) => <SingleProductPage user={user} {...props} />} />
-          <Route exact path="/admin" component={AdminDashboard} />
+          <Route exact path="/admin" render={(props) => <AdminDashboard {...props} />} />
           <Route path="/admin/tilaus/:ordernum" component={AdminSingleOrder} />
         </Switch>
         <Footer user={user} />

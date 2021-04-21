@@ -6,10 +6,14 @@ export default function AdminDashboard() {
   const [orders, setOrders] = useState([]);
 
   const URL = "http://localhost/astiakauppa/getOrders.php";
+  const history = useHistory();
 
   useEffect(() => {
     let status = 0;
-    fetch(URL)
+
+    fetch(URL, {
+      credentials: "include",
+    })
       .then((response) => {
         status = parseInt(response.status);
         return response.json();
@@ -19,11 +23,11 @@ export default function AdminDashboard() {
           if (status === 200) {
             setOrders(response);
           } else {
-            alert(response.error);
+            history.push("/");
           }
         },
         (error) => {
-          alert(error);
+          history.push("/");
         }
       );
   }, []);

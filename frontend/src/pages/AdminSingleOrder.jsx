@@ -1,13 +1,17 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router";
 
 export default function AdminSingleOrder({ match }) {
   const [orderRows, setOrderRows] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     const URL = "http://localhost/astiakauppa/getSingleOrder.php?ordernum=" + match.params.ordernum;
     let status = 0;
-    fetch(URL)
+    fetch(URL, {
+      credentials: "include",
+    })
       .then((response) => {
         status = parseInt(response.status);
         return response.json();
@@ -17,11 +21,11 @@ export default function AdminSingleOrder({ match }) {
           if (status === 200) {
             setOrderRows(response);
           } else {
-            alert(response.error);
+            history.push("/");
           }
         },
         (error) => {
-          alert(error);
+          history.push("/");
         }
       );
   }, [match.params.ordernum]);
