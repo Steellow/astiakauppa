@@ -7,15 +7,12 @@ export default function CheckOutPage({ user, empty }) {
   const [items, setItems] = useState(shoppingCart.getItems());
   const [total, setTotal] = useState(0);
   const [finished, setFinished] = useState(false);
-  const [firstname, setFirstname] = useState('');
-  const [lastname, setLastname] = useState('');
-  const [email, setEmail] = useState('');
-  const [address, setAddress] = useState('');
-  const [city, setCity] = useState('');
-  const [postalcode, setPostalcode] = useState('');
-
-
-
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [postalcode, setPostalcode] = useState("");
 
   const calcTotal = useCallback(() => {
     let i = 0;
@@ -33,35 +30,36 @@ export default function CheckOutPage({ user, empty }) {
   function checkout(e) {
     e.preventDefault();
     console.log(items);
-    fetch(URLI,{
-      method: 'POST',
+    fetch(URLI, {
+      method: "POST",
       header: {
-        'Accept': 'application/json', 
-        'Content-Type': 'application/json',
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-      cart: items,
-      firstname: firstname,
-      lastname: lastname,
-      email: email,
-      address: address,
-      city: city,
-      postalcode: postalcode
+        cart: items,
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        address: address,
+        city: city,
+        postalcode: postalcode,
+      }),
     })
-    })
-  .then (res => {
-  return res.json();
-  })
-  .then (
-    (res) => {
-      console.log(res);
-      // tilaus onnistui, seuraavaksi ostoskorin tyhjennys, jos ostoskori tyhjä->ei anna tehdä tilausta
-      // empty();
-      // setFinished(true);
-      }, (error) => {
-        alert(error);
-      }
-    )
+      .then((res) => {
+        return res.json();
+      })
+      .then(
+        (res) => {
+          console.log(res);
+          // tilaus onnistui, seuraavaksi ostoskorin tyhjennys, jos ostoskori tyhjä->ei anna tehdä tilausta
+          // empty();
+          // setFinished(true);
+        },
+        (error) => {
+          alert(error);
+        }
+      );
   }
 
   return (
@@ -88,10 +86,10 @@ export default function CheckOutPage({ user, empty }) {
                     className="form-control"
                     id="firstname"
                     name="firstname"
-                    onChange={e=>setFirstname(e.target.value)}
+                    onChange={(e) => setFirstname(e.target.value)}
                     required
                     placeholder="Etunimi"
-                    // value=""/* {user !== null ? user.firstname : ""} */
+                    defaultValue={user !== null ? user.firstname : ""}
                   />
                 </div>
                 <div className="form-group col-md-6">
@@ -100,10 +98,10 @@ export default function CheckOutPage({ user, empty }) {
                     className="form-control"
                     id="lastname"
                     name="lastname"
-                    onChange={e=>setLastname(e.target.value)}
+                    onChange={(e) => setLastname(e.target.value)}
                     required
                     placeholder="Sukunimi"
-                    // value=""/* {user !== null ? user.lastname : ""} */
+                    defaultValue={user !== null ? user.lastname : ""}
                   />
                 </div>
               </div>
@@ -119,10 +117,10 @@ export default function CheckOutPage({ user, empty }) {
                   className="form-control"
                   id="email"
                   name="email"
-                  onChange={e=>setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                   placeholder="Sähköpostiosoite"
-                  // value=""/* {user !== null ? user.email : ""} */
+                  defaultValue={user !== null ? user.email : ""}
                 />
               </div>
             </div>
@@ -136,21 +134,37 @@ export default function CheckOutPage({ user, empty }) {
                 className="form-control"
                 id="address"
                 name="address"
-                onChange={e=>setAddress(e.target.value)}
+                onChange={(e) => setAddress(e.target.value)}
                 required
                 placeholder="Katuosoite"
-                // value=""/* {user !== null ? user.address : ""} */
+                defaultValue={user !== null ? user.address : ""}
               />
             </div>
 
             <div className="row">
               <div className="col-md-6 mb-3">
                 <label for="city">Kaupunki</label>
-                <input type="text" className="form-control" id="city" name="city" onChange={e=>setCity(e.target.value)} required /* value=""{user !== null ? user.city : ""} */ />
+                <input
+                  type="text"
+                  className="form-control"
+                  id="city"
+                  name="city"
+                  onChange={(e) => setCity(e.target.value)}
+                  required
+                  defaultValue={user !== null ? user.city : ""}
+                />
               </div>
               <div className="form-group col-md-5">
                 <label for="zip">Postinumero</label>
-                <input type="text" className="form-control" id="zip" name="postalcode" onChange={e=>setPostalcode(e.target.value)} required /* value=""{user !== null ? user.postalcode : ""} */ />
+                <input
+                  type="text"
+                  className="form-control"
+                  id="zip"
+                  name="postalcode"
+                  onChange={(e) => setPostalcode(e.target.value)}
+                  required
+                  defaultValue={user !== null ? user.postalcode : ""}
+                />
               </div>
 
               <div className="form-group">
@@ -226,8 +240,8 @@ export default function CheckOutPage({ user, empty }) {
                 </div>
               </div>
               <hr className="mb-4" />
-              
-              <input className="btn btn-success btn-lg btn-block" value="Maksa tilaus" type="submit"/>
+
+              <input className="btn btn-success btn-lg btn-block" value="Maksa tilaus" type="submit" />
             </div>
           </form>
         </div>
