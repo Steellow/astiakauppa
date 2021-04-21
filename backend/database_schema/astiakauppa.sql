@@ -197,10 +197,10 @@ values('Teemalautanen: musta syvä 21 cm', 7,17.90,1,'http://localhost/astiakaup
 -- lasit
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Kartio: Juomalasi', 5,13.90,3,'http://localhost/astiakauppa/img/kartiojuomalasi.jpeg',
+values('Kartio: Juomalasi', 5,13.90,3,'http://localhost/astiakauppa/img/kartiojuomalasi.jpg',
 'Kaj Franckin suunnittelema klassinen ja geometrinen juomalasi sopii täydellisesti arkikäyttöön. Kirkas. Tilavuus 21 cl. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Kalinka: Juomalasi', 8,17.00,3,'http://localhost/astiakauppa/img/kalinkalasit.jpg',
+values('Kalinka: Juomalasi', 8,17.00,3,'http://localhost/astiakauppa/img/kalinkalasi.jpg',
 '80-luvulla Timo Sarpanevan suunnittelema Kalinka on heleä ja yksityiskohtainen juomalasi. Kirkas. Tilavuus 20 cl. Vain käsinpesu.');
 
