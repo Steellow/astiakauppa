@@ -21,9 +21,11 @@ export default function Logout({ setUser }) {
   }, [setUser]);
 
   return (
-    <div>
-      <p>Olet kirjautunut ulos.</p>
-      <Link to="/kirjaudu">Kirjaudu sisään</Link>
+    <div className="row justify-content-center text-center">
+      <h3 className="col-12 mt-3">Olet kirjautunut ulos.</h3>
+      <Link to="/kirjaudu" className="my-3 btn btn-success p-3" type="button">
+        Kirjaudu sisään
+      </Link>
     </div>
   );
 }
