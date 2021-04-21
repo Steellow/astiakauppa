@@ -7,12 +7,12 @@ export default function CheckOutPage({ user, empty }) {
   const [items, setItems] = useState(shoppingCart.getItems());
   const [total, setTotal] = useState(0);
   const [finished, setFinished] = useState(false);
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [postalcode, setPostalcode] = useState("");
+  const [firstname, setFirstname] = useState(user !== null ? user.firstname : "");
+  const [lastname, setLastname] = useState(user !== null ? user.lastname : "");
+  const [email, setEmail] = useState(user !== null ? user.email : "");
+  const [address, setAddress] = useState(user !== null ? user.address : "");
+  const [city, setCity] = useState(user !== null ? user.city : "");
+  const [postalcode, setPostalcode] = useState(user !== null ? user.postalcode : "");
 
   const calcTotal = useCallback(() => {
     let i = 0;
@@ -76,12 +76,13 @@ export default function CheckOutPage({ user, empty }) {
         <div>
           <form onSubmit={checkout}>
             <div className="form-group">
-              <label for="fullname">
+              <label htmlFor="fullname">
                 <i className="fa fa-user"></i> Koko nimi
               </label>
               <div className="row">
                 <div className="col-md-6">
                   <input
+                    value={firstname}
                     type="text"
                     className="form-control"
                     id="firstname"
@@ -89,11 +90,11 @@ export default function CheckOutPage({ user, empty }) {
                     onChange={(e) => setFirstname(e.target.value)}
                     required
                     placeholder="Etunimi"
-                    defaultValue={user !== null ? user.firstname : ""}
                   />
                 </div>
                 <div className="form-group col-md-6">
                   <input
+                    value={lastname}
                     type="text"
                     className="form-control"
                     id="lastname"
@@ -101,7 +102,6 @@ export default function CheckOutPage({ user, empty }) {
                     onChange={(e) => setLastname(e.target.value)}
                     required
                     placeholder="Sukunimi"
-                    defaultValue={user !== null ? user.lastname : ""}
                   />
                 </div>
               </div>
@@ -109,10 +109,11 @@ export default function CheckOutPage({ user, empty }) {
 
             <div className="form-group">
               <div className="form-group">
-                <label for="email">
+                <label htmlFor="email">
                   <i className="fa fa-envelope"></i> Sähköposti
                 </label>
                 <input
+                  value={email}
                   type="email"
                   className="form-control"
                   id="email"
@@ -120,16 +121,16 @@ export default function CheckOutPage({ user, empty }) {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   placeholder="Sähköpostiosoite"
-                  defaultValue={user !== null ? user.email : ""}
                 />
               </div>
             </div>
 
             <div className="form-group ">
-              <label for="address">
+              <label htmlFor="address">
                 <i className="fa fa-address-card-o"></i> Osoite
               </label>
               <input
+                value={address}
                 type="text"
                 className="form-control"
                 id="address"
@@ -137,40 +138,31 @@ export default function CheckOutPage({ user, empty }) {
                 onChange={(e) => setAddress(e.target.value)}
                 required
                 placeholder="Katuosoite"
-                defaultValue={user !== null ? user.address : ""}
               />
             </div>
 
             <div className="row">
               <div className="col-md-6 mb-3">
-                <label for="city">Kaupunki</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="city"
-                  name="city"
-                  onChange={(e) => setCity(e.target.value)}
-                  required
-                  defaultValue={user !== null ? user.city : ""}
-                />
+                <label htmlFor="city">Kaupunki</label>
+                <input type="text" value={city} className="form-control" id="city" name="city" onChange={(e) => setCity(e.target.value)} required />
               </div>
               <div className="form-group col-md-5">
-                <label for="zip">Postinumero</label>
+                <label htmlFor="zip">Postinumero</label>
                 <input
                   type="text"
+                  value={postalcode}
                   className="form-control"
                   id="zip"
                   name="postalcode"
                   onChange={(e) => setPostalcode(e.target.value)}
                   required
-                  defaultValue={user !== null ? user.postalcode : ""}
                 />
               </div>
 
               <div className="form-group">
                 <div className="custom-control custom-checkbox">
                   <input type="checkbox" className="custom-control-input" id="same-address" />
-                  <label className="custom-control-label" for="same-address">
+                  <label className="custom-control-label" htmlFor="same-address">
                     Toimitusosoitteeni on sama kuin laskutus.
                   </label>
                 </div>
@@ -183,13 +175,13 @@ export default function CheckOutPage({ user, empty }) {
                 <div className="form-group">
                   <div className="custom-control custom-radio">
                     <input id="toimitusKotiin" name="toimitusTapa" type="radio" className="custom-control-input" />
-                    <label className="custom-control-label" for="toimitusKotiin">
+                    <label className="custom-control-label" htmlFor="toimitusKotiin">
                       Toimitus kotiin
                     </label>
                   </div>
                   <div className="custom-control custom-radio">
                     <input id="postitoimiPaikka" name="toimitusTapa" type="radio" className="custom-control-input" />
-                    <label className="custom-control-label" for="postitoimiPaikka">
+                    <label className="custom-control-label" htmlFor="postitoimiPaikka">
                       Toimitus postitoimipaikkaan
                     </label>
                   </div>
@@ -202,38 +194,38 @@ export default function CheckOutPage({ user, empty }) {
                 <div className="form-group">
                   <div className="custom-control custom-radio">
                     <input id="credit" name="paymentMethod" type="radio" className="custom-control-input" />
-                    <label className="custom-control-label" for="credit">
+                    <label className="custom-control-label" htmlFor="credit">
                       Maksukortti
                     </label>
                   </div>
                   <div className="custom-control custom-radio">
                     <input id="paypal" name="paymentMethod" type="radio" className="custom-control-input" />
-                    <label className="custom-control-label" for="paypal">
+                    <label className="custom-control-label" htmlFor="paypal">
                       PayPal
                     </label>
                   </div>
                 </div>
 
                 <div className="form-group">
-                  <label for="cname">Nimi kortilla</label>
+                  <label htmlFor="cname">Nimi kortilla</label>
                   <input type="text" className="form-control" id="cname" name="status" placeholder="Maija Mehiläinen" />
                   <small className="text-muted">Koko nimi kuten kortilla näkyy</small>
                   <div className="invalid-feedback"> Kortin nimi vaaditaan </div>
                 </div>
                 <div className="form-group">
-                  <label for="ccnum">Kortin numero</label>
+                  <label htmlFor="ccnum">Kortin numero</label>
                   <input type="text" className="form-control" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"></input>
                   <div className="invalid-feedback"> Luottokortin numero vaaditaan </div>
                 </div>
 
                 <div className="form-row">
                   <div className="col-md-3 mb-3">
-                    <label for="expyyear">Vanhenee</label>
+                    <label htmlFor="expyyear">Vanhenee</label>
                     <input type="text" className="form-control" id="expyear" name="expyear" placeholder="KK/VV"></input>
                     <div className="invalid-feedback"> Expiration date required </div>
                   </div>
                   <div className=" col-md-3">
-                    <label for="cvv">CVV</label>
+                    <label htmlFor="cvv">CVV</label>
                     <input type="text" className="form-control" id="cvv" name="cvv" placeholder="352"></input>
                     <div className="invalid-feedback"> Security code required </div>
                   </div>
