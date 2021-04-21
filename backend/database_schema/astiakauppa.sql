@@ -197,7 +197,7 @@ values('Teemalautanen: musta syvä 21 cm', 7,17.90,1,'http://localhost/astiakaup
 -- lasit
 
 insert into product(name,cost,price,groupid,pic,description)
-values('Kartio: Juomalasi', 5,13.90,3,'http://localhost/astiakauppa/img/kartiojuomalasi.jpg',
+values('Kartio: Juomalasi', 5,13.90,3,'http://localhost/astiakauppa/img/kartiojuomalasi.jpeg',
 'Kaj Franckin suunnittelema klassinen ja geometrinen juomalasi sopii täydellisesti arkikäyttöön. Kirkas. Tilavuus 21 cl. Konepesun kestävä.');
 
 insert into product(name,cost,price,groupid,pic,description)
