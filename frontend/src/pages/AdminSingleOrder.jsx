@@ -28,7 +28,7 @@ export default function AdminSingleOrder({ match }) {
           history.push("/");
         }
       );
-  }, [match.params.ordernum]);
+  }, [match.params.ordernum, history]);
 
   return (
     <div className="card container my-2">

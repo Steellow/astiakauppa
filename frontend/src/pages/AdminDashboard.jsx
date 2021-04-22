@@ -30,7 +30,7 @@ export default function AdminDashboard() {
           history.push("/");
         }
       );
-  }, []);
+  }, [history]);
 
   return (
     <div className="card container my-2">
