@@ -58,18 +58,52 @@ export default function AdminDashboard() {
 
 function TableRow({ order }) {
   const history = useHistory();
+  const [rowStatus, setRowStatus] = useState(order.status);
 
   // Using history.push instead of <Link /> because <Link> didn't work on table
-  const handleRowClick = (ordernum) => {
+  const handleRowClick = () => {
     history.push(`/admin/tilaus/${order.ordernum}`);
   };
 
+  const updateStatus = (e) => {
+    e.preventDefault();
+
+    setRowStatus(e.target.value);
+
+    let fetchStatus = 0;
+    fetch(`http://localhost/astiakauppa/changeOrderStatus.php?orderNum=${order.ordernum}&status=${e.target.value}`, {
+      method: "POST",
+      credentials: "include",
+    })
+      .then((response) => {
+        fetchStatus = response.status;
+        return response;
+      })
+      .then(
+        (response) => {
+          if (fetchStatus !== 200) {
+            alert(response);
+          }
+        },
+        (error) => {
+          alert(error);
+        }
+      );
+  };
+
   return (
-    <tr className="clickableRow" onClick={() => handleRowClick(order.ordernum)}>
+    <tr className="clickableRow" onClick={handleRowClick}>
       <th scope="row">{order.ordernum}</th>
       <td>{order.userid}</td>
       <td>{order.orderdate}</td>
-      <td>{order.status}</td>
+      <td onClick={(e) => e.stopPropagation()}>
+        {/* stopPropagation ettei selectistä painaessa tapahtu handleRowClick*/}
+        <select value={rowStatus} onChange={updateStatus}>
+          <option value="M">Maksettu</option>
+          <option value="L">Lähetetty</option>
+          <option value="T">Toimitettu</option>
+        </select>
+      </td>
     </tr>
   );
 }
