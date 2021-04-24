@@ -61,8 +61,6 @@ try {
   }
 
   header('HTTP/1.1 200 OK');
-  // header("Location: http://localhost:3000/"); /* oma sivu onnistuneelle checkoutille? */
-
   $db->commit();
 }
   
