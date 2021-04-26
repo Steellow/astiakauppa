@@ -5,7 +5,7 @@ import shoppingCart from "../util/ShoppingCart";
 import ReactPlaceholder from "react-placeholder";
 import imagePlaceholder from "../util/ImagePlaceholder";
 
-export default function SingleProductPage({ match, user }) {
+export default function SingleProductPage({ match, user, updateTotalProducts }) {
   const [product, setProduct] = useState({});
   const [discPrice, setDiscPrice] = useState();
 
@@ -86,6 +86,11 @@ export default function SingleProductPage({ match, user }) {
       );
   };
 
+  const handleAddToCart = () => {
+    shoppingCart.addItem(product);
+    updateTotalProducts();
+  };
+
   return (
     <div className="container card my-3">
       <div className="row">
@@ -104,7 +109,7 @@ export default function SingleProductPage({ match, user }) {
           <div>
             <div className="row justify-content-between d-flex align-items-center my-3">
               <h3 className="rounded col-4 col-lg-3 text-center align-middle">{product.discprice || product.price || 12.34}€</h3>
-              <button className="btn btn-primary col-7 col-lg-8 p-3 mr-3" onClick={() => shoppingCart.addItem(product)}>
+              <button className="btn btn-primary col-7 col-lg-8 p-3 mr-3" onClick={handleAddToCart}>
                 Lisää ostoskoriin <i className="fa fa-shopping-basket"></i>
               </button>
             </div>
