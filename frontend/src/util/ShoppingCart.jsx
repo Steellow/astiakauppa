@@ -10,6 +10,15 @@ const getItemId = (product) => {
 };
 
 // Exported functions
+const getTotalProducts = () => {
+  const items = getItems();
+  let totalItems = 0;
+  for (let i = 0; i < items.length; i++) {
+    totalItems += items[i].amount;
+  }
+  return totalItems;
+};
+
 const getItems = () => {
   return JSON.parse(localStorage.getItem("shoppingCart")) || [];
 };
@@ -43,6 +52,7 @@ const clearShoppingCart = () => {
 };
 
 const sCutils = {
+  getTotalProducts,
   getItems,
   addItem,
   clearShoppingCart,

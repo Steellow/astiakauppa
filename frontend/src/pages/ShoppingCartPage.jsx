@@ -3,13 +3,14 @@ import ShoppingCartItem from "../components/ShoppingCartItem";
 import { Link } from "react-router-dom";
 import shoppingCart from "../util/ShoppingCart";
 
-function ShoppingCartPage({ user }) {
+function ShoppingCartPage({ user, updateTotalProducts }) {
   const [items, setItems] = useState(shoppingCart.getItems());
   const [total, setTotal] = useState(0);
 
   const handleRemove = (product) => {
     shoppingCart.deleteItem(product);
     setItems(shoppingCart.getItems());
+    updateTotalProducts();
     calcTotal();
   };
 
@@ -26,14 +27,17 @@ function ShoppingCartPage({ user }) {
     calcTotal();
   }, [calcTotal]);
 
+  const callBack = () => {
+    setItems(shoppingCart.getItems);
+    updateTotalProducts();
+  };
+
   return (
     <div className="container card my-3">
       <div className="row">
         <div className="col-12">
           {items.map((item) => {
-            return (
-              <ShoppingCartItem key={item.product.id} item={item} handleRemove={handleRemove} callBack={() => setItems(shoppingCart.getItems)} />
-            );
+            return <ShoppingCartItem key={item.product.id} item={item} handleRemove={handleRemove} callBack={callBack} />;
           })}
         </div>
         <div className="bg-dark col-12 justify-content-between d-flex summary align-middle">

@@ -15,11 +15,18 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AdminSingleOrder from "./pages/AdminSingleOrder";
 import placeholderProducts from "./util/PlaceholderProducts";
 import Logout from "./components/LogOut";
+import shoppingCart from "./util/ShoppingCart";
 
 function App() {
   const [allProducts, setItems] = useState(placeholderProducts);
   const [user, setUser] = useState(null);
+  const [totalProducts, setTotalProducts] = useState(shoppingCart.getTotalProducts());
   const URL = "http://localhost/astiakauppa/";
+
+  // Used for updating the amount of products on header
+  const updateTotalProducts = () => {
+    setTotalProducts(shoppingCart.getTotalProducts());
+  };
 
   useEffect(() => {
     let status2 = 0;
@@ -65,10 +72,10 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <Header user={user} />
+        <Header user={user} totalProducts={totalProducts} />
         <Switch>
           <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} />
-          <Route path="/ostoskori" render={(props) => <ShoppingCartPage user={user} {...props} />} />
+          <Route path="/ostoskori" render={(props) => <ShoppingCartPage user={user} updateTotalProducts={updateTotalProducts} {...props} />} />
           <Route path="/kirjaudu" render={() => <LogIn setUser={setUser} />} />
           <Route path="/asiakastiedot" component={PromptLogin} />
           <Route path="/rekisteri" component={RegistrationPage} />
@@ -88,7 +95,7 @@ function App() {
             render={(props) => <Products products={allProducts.filter((prod) => Number(prod.groupid) === Number(3))} {...props} />}
           />
           <Route path="/haku/:searchterm" component={SearchResults} />
-          <Route path="/tuote/:id" render={(props) => <SingleProductPage user={user} {...props} />} />
+          <Route path="/tuote/:id" render={(props) => <SingleProductPage user={user} updateTotalProducts={updateTotalProducts} {...props} />} />
           <Route exact path="/admin" render={(props) => <AdminDashboard {...props} />} />
           <Route path="/admin/tilaus/:ordernum" component={AdminSingleOrder} />
         </Switch>

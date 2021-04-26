@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logo from "../img/logo.png";
 import { Link, useHistory } from "react-router-dom";
 
-export default function Header({user}) {
+export default function Header({ user, totalProducts }) {
   const [criteria, setCriteria] = useState("");
   const history = useHistory();
 
@@ -71,16 +71,25 @@ export default function Header({user}) {
               </div>
               <li className="nav-item ">
                 <div className="d-flex justify-content-center">
-                <Link to="/ostoskori" className="nav-link" style={{ color: "white" }}>
-                    <i className="fa fa-lg fa-lg fa-shopping-cart mx-2" aria-label="Ostoskori"></i>
+                  <Link to="/ostoskori" className="nav-link position-relative" style={{ color: "white" }}>
+                    <i className="fa fa-lg fa-lg fa-shopping-cart mx-2 " aria-label="Ostoskori"></i>
+                    {totalProducts > 0 ? (
+                      <span className="badge badge-pill badge-success position-absolute" style={{ top: 0, right: 0 }}>
+                        {totalProducts.toString()}
+                      </span>
+                    ) : (
+                      <></>
+                    )}
                   </Link>
-                  {(user !== null) ? <Link to="/uloskirjautuminen" className="nav-link" style={{ color: "white" }}>
-                    <i className="fa fa-lg fa-sign-out mx-2" aria-label="Kirjaudu ulos"></i>
-                  </Link>:<Link to="/kirjaudu" className="nav-link" style={{ color: "white" }}>
-                    <i className="fa fa-lg fa-sign-in mx-2" aria-label="Kirjaudu sisään"></i>
-                  </Link>}
-                  
-                  
+                  {user !== null ? (
+                    <Link to="/uloskirjautuminen" className="nav-link" style={{ color: "white" }}>
+                      <i className="fa fa-lg fa-sign-out mx-2" aria-label="Kirjaudu ulos"></i>
+                    </Link>
+                  ) : (
+                    <Link to="/kirjaudu" className="nav-link" style={{ color: "white" }}>
+                      <i className="fa fa-lg fa-sign-in mx-2" aria-label="Kirjaudu sisään"></i>
+                    </Link>
+                  )}
                 </div>
               </li>
             </ul>
