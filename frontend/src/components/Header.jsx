@@ -38,18 +38,8 @@ export default function Header({user}) {
           <div className="navbar-collapse collapse w-100" id="navbarNavDropdown">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <Link to="/lautaset" className="nav-link">
-                  Lautaset
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/mukit" className="nav-link">
-                  Mukit
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/lasit" className="nav-link">
-                  Lasit
+                <Link to="/" className="nav-link">
+                  Etusivu
                 </Link>
               </li>
             </ul>

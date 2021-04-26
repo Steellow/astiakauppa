@@ -64,7 +64,7 @@ function App() {
 
   return (
     <Router>
-      <div className="container">
+      <div className="container pohja">
         <Header user={user} />
         <Switch>
           <Route exact path="/" render={(props) => <Products products={allProducts} {...props} />} />

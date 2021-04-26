@@ -60,7 +60,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
@@ -76,4 +76,12 @@ input[type="number"] {
   background-color: #cccccc;
   transition: all 0.2s;
   cursor: pointer;
+}
+
+/* sivun pohjavärit */
+body {
+  background-color: #e1ecf9;
+}
+.pohja {
+  background-color: white;
 }
