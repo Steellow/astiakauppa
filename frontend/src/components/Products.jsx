@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import SingleProduct from "./SingleProduct";
-import img from '../img/banneri.png';
-import {Link} from 'react-router-dom';
+import img from "../img/banneri.png";
+import { Link } from "react-router-dom";
 
 export default function Products({ products }) {
   const [sortedProducts, sortProducts] = useState([]);
@@ -63,7 +63,7 @@ export default function Products({ products }) {
       <div className="row">
         <div className="col-12">
           <p className="text-center">
-            <img className="img-fluid p-4 text-center" src={img} style={{width:'100%'}} alt="Banner"></img>
+            <img className="img-fluid p-4 text-center" src={img} style={{ width: "100%" }} alt="Banner"></img>
           </p>
         </div>
         <div className="col-12">
@@ -77,7 +77,7 @@ export default function Products({ products }) {
             <Link to="/lasit" className="btn btn-outline-dark my-2 mr-1">
               Lasit
             </Link>
-            <select onChange={handleChange} value={dropdownValue} style={{ marginTop: "10px", marginBottom: "10px" }} className="btn btn-outline-dark">
+            <select onChange={handleChange} value={dropdownValue} className="btn btn-outline-dark my-2 col-4 col-md-3 col-lg-2">
               <option value="1">Suosituimmat</option>
               <option value="2">Halvin ensin</option>
               <option value="3">Kallein ensin</option>

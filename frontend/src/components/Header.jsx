@@ -17,7 +17,7 @@ export default function Header({ user, totalProducts }) {
     <header className="row">
       <section className="col-12 text-center">
         <Link to="/">
-          <img className="img-responsive text-center p-4 col-2" src={logo} alt="Logo"></img>
+          <img className=" text-center p-4 col-10 col-sm-6 col-md-5 col-lg-2" src={logo} alt="Logo"></img>
         </Link>
       </section>
 

@@ -40,15 +40,15 @@ function ShoppingCartPage({ user, updateTotalProducts }) {
             return <ShoppingCartItem key={item.product.id} item={item} handleRemove={handleRemove} callBack={callBack} />;
           })}
         </div>
-        <div className="bg-dark col-12 justify-content-between d-flex summary align-middle">
-          <p className="d-inline-block m-4">Yhteensä</p>
-          <p className="d-inline-block m-4">{total.toFixed(2)}€</p>
+        <div className="bg-dark col-12 text-white">
+          <p className="h3 col-6 col-md-4 d-inline-block my-4 text-md-center align-middle">Yhteensä</p>
+          <p className="h3 col-6 col-md-4 d-inline-block my-4 text-right text-md-center align-middle">{total.toFixed(2)}€</p>
           {user ? (
-            <Link to="/checkout" className="my-3 btn btn-success pt-3" type="button">
+            <Link to="/checkout" className="my-3 btn btn-success py-3 col-12 col-md-4" type="button">
               Jatka tilaukseen
             </Link>
           ) : (
-            <Link to="/asiakastiedot" className="my-3 btn btn-success pt-3" type="button">
+            <Link to="/asiakastiedot" className="my-3 btn btn-success py-3 col-12 col-md-4" type="button">
               Jatka tilaukseen
             </Link>
           )}
