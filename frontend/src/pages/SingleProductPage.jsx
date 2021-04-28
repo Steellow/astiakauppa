@@ -4,6 +4,7 @@ import { useHistory } from "react-router";
 import shoppingCart from "../util/ShoppingCart";
 import ReactPlaceholder from "react-placeholder";
 import imagePlaceholder from "../util/ImagePlaceholder";
+import { Link } from "react-router-dom";
 
 export default function SingleProductPage({ match, user, updateTotalProducts }) {
   const [product, setProduct] = useState({});
@@ -115,9 +116,11 @@ export default function SingleProductPage({ match, user, updateTotalProducts }) 
             </div>
             {user !== null && user.admin === "1" ? (
               product.discprice ? (
-                <button className="btn btn-danger mb-2 col-12" onClick={deleteSale}>
-                  Poista alennus
-                </button>
+                <Link to={`/`}>
+                  <button className="btn btn-danger mb-2 col-12" onClick={deleteSale}>
+                    Poista alennus
+                  </button>
+                </Link>
               ) : (
                 <div className="input-group mb-3">
                   <input
@@ -128,9 +131,11 @@ export default function SingleProductPage({ match, user, updateTotalProducts }) 
                     className="form-control"
                   />
                   <div className="input-group-append">
-                    <button className="btn btn-outline-secondary" onClick={addSale}>
-                      Lisää alennukseen
-                    </button>
+                    <Link to="/">
+                      <button className="btn btn-outline-secondary" onClick={addSale}>
+                        Lisää alennukseen
+                      </button>
+                    </Link>
                   </div>
                 </div>
               )

@@ -36,7 +36,7 @@ function App() {
     })
       .then((respo) => {
         status2 = parseInt(respo.status);
-        return respo;
+        return respo.json();
       })
       .then(
         (respo) => {
