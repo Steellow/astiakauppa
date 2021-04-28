@@ -2,11 +2,11 @@ import React, { useState, useEffect, useCallback } from "react";
 import shoppingCart from "../util/ShoppingCart";
 import CheckOutCart from "../components/CheckOutCart";
 
-export default function CheckOutPage({ user /* empty */ }) {
+export default function CheckOutPage({ user, empty }) {
   const URLI = "http://localhost/astiakauppa/checkout.php";
   const [items, setItems] = useState(shoppingCart.getItems());
   const [total, setTotal] = useState(0);
-  // const [finished, setFinished] = useState(false);
+  const [finished, setFinished] = useState(false);
   const [firstname, setFirstname] = useState(user !== null ? user.firstname : "");
   const [lastname, setLastname] = useState(user !== null ? user.lastname : "");
   const [email, setEmail] = useState(user !== null ? user.email : "");
@@ -45,22 +45,23 @@ export default function CheckOutPage({ user /* empty */ }) {
         city: city,
         postalcode: postalcode,
       }),
-    }).then((res) => {
+    })
+    .then((res) => {
       return res.json();
-    });
-    // .then(
-    //   (res) => {
-    //     console.log(res);
-    //     tilaus onnistui, seuraavaksi ostoskorin tyhjennys, jos ostoskori tyhjä->ei anna tehdä tilausta
-    //     empty();
-    //     setFinished(true);
-    //   },
-    //   (error) => {
-    //     alert(error);
-    //   }
-    // );
+    })
+    .then(
+      (res) => {
+        console.log(res);
+        // tilaus onnistui, seuraavaksi ostoskorin tyhjennys, jos ostoskori tyhjä->ei anna tehdä tilausta
+        empty();
+        setFinished(true);
+      },
+      (error) => {
+        alert(error);
+      }
+    );
   }
-
+  if (finished === false) {
   return (
     <div className="row">
       <div className="col-12 my-3">
@@ -253,4 +254,7 @@ export default function CheckOutPage({ user /* empty */ }) {
       </div>
     </div>
   );
+} else {
+  return (alert('checkout successful'));
+}
 }
