@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'inc/functions.php';
 require_once 'inc/headers.php';
 
@@ -19,20 +20,33 @@ try {
 
   // USERS-TAULU
 
-  $query = $db->prepare("INSERT INTO users (firstname, lastname, email, address, city, postalcode) VALUES(:firstname,:lastname,:email,:address,:city,:postalcode)");
-  $query->bindValue(':firstname', $firstname, PDO::PARAM_STR);
-  $query->bindValue(':lastname', $lastname, PDO::PARAM_STR);
-  $query->bindValue(':email', $email, PDO::PARAM_STR);
-  $query->bindValue(':address', $address, PDO::PARAM_STR);
-  $query->bindValue(':city', $city, PDO::PARAM_STR);
-  $query->bindValue(':postalcode', $postalcode, PDO::PARAM_INT);
-  $query->execute();
-  // var_dump(json_decode($cart));
-  // exit;
+  // katsotaan onko sähköposti jo tietokannassa
+  $emailsql = "SELECT * FROM users WHERE email = :email";
+  $check = $db->prepare($emailsql);
+  $check->bindValue(':email', $email, PDO::PARAM_STR);
+  $check->execute();
+  $results = $check->fetchAll(PDO::FETCH_ASSOC);
+
+ // jos sposti ei ole tietokannassa, lisätään tilaaja normaalisti ja otetaan id siitä
+  if (!$results) {
+    $query = $db->prepare("INSERT INTO users (firstname, lastname, email, address, city, postalcode) VALUES(:firstname,:lastname,:email,:address,:city,:postalcode)");
+    $query->bindValue(':firstname', $firstname, PDO::PARAM_STR);
+    $query->bindValue(':lastname', $lastname, PDO::PARAM_STR);
+    $query->bindValue(':email', $email, PDO::PARAM_STR);
+    $query->bindValue(':address', $address, PDO::PARAM_STR);
+    $query->bindValue(':city', $city, PDO::PARAM_STR);
+    $query->bindValue(':postalcode', $postalcode, PDO::PARAM_INT);
+    $query->execute();
+    $userid = $db->lastInsertId(); 
+  } else {
+    // jos sposti on tietokannassa, napataan vain id muuttujaan
+    foreach($results as $row) {
+      $userid = $row['id'];
+    }
+  }
 
   // ORDER-TAULU
 
-  $userid = $db->lastInsertId(); 
   $curdate = date("Y-m-d");
 
   $order = $db->prepare("INSERT INTO orders (userid, orderdate) VALUES (?, ?)");

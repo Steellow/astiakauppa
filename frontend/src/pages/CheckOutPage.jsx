@@ -7,7 +7,7 @@ export default function CheckOutPage({ user, updateTotalProducts, empty }) {
   const URLI = "http://localhost/astiakauppa/checkout.php";
   const [items, setItems] = useState(shoppingCart.getItems());
   const [total, setTotal] = useState(0);
-  const [finished, setFinished] = useState(false);
+  // const [finished, setFinished] = useState(false);
   const [firstname, setFirstname] = useState(user !== null ? user.firstname : "");
   const [lastname, setLastname] = useState(user !== null ? user.lastname : "");
   const [email, setEmail] = useState(user !== null ? user.email : "");
@@ -57,7 +57,7 @@ export default function CheckOutPage({ user, updateTotalProducts, empty }) {
           console.log(res);
           // tilaus onnistui, seuraavaksi ostoskorin tyhjennys, jos ostoskori tyhjä->ei anna tehdä tilausta
           // empty();
-          setFinished(true);
+          // setFinished(true);
         },
         (error) => {
           // alert(error);
