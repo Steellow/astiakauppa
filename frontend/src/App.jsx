@@ -45,7 +45,7 @@ function App() {
           }
         },
         (error) => {
-          alert(error);
+          // alert(error);
         }
       );
 
@@ -79,7 +79,7 @@ function App() {
           <Route path="/kirjaudu" render={() => <LogIn setUser={setUser} />} />
           <Route path="/asiakastiedot" component={PromptLogin} />
           <Route path="/rekisteri" component={RegistrationPage} />
-          <Route path="/checkout" render={(props) => <CheckOutPage user={user} {...props} />} />
+          <Route path="/checkout" render={(props) => <CheckOutPage user={user} updateTotalProducts={updateTotalProducts} {...props} />} />
           <Route path="/rekisteriok" component={RegistrationSuccess} />
           <Route path="/uloskirjautuminen" render={() => <Logout setUser={setUser} />} />
           <Route

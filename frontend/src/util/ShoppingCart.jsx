@@ -48,7 +48,8 @@ const deleteItem = (product) => {
 };
 
 const clearShoppingCart = () => {
-  localStorage.setItem("shoppingCart", []);
+  // localStorage.setItem("shoppingCart", []);
+  localStorage.clear();
 };
 
 const sCutils = {

@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import shoppingCart from "../util/ShoppingCart";
 import CheckOutCart from "../components/CheckOutCart";
+import { useHistory } from "react-router";
 
-export default function CheckOutPage({ user, empty }) {
+export default function CheckOutPage({ user, updateTotalProducts, empty }) {
   const URLI = "http://localhost/astiakauppa/checkout.php";
   const [items, setItems] = useState(shoppingCart.getItems());
   const [total, setTotal] = useState(0);
@@ -13,6 +14,8 @@ export default function CheckOutPage({ user, empty }) {
   const [address, setAddress] = useState(user !== null ? user.address : "");
   const [city, setCity] = useState(user !== null ? user.city : "");
   const [postalcode, setPostalcode] = useState(user !== null ? user.postalcode : "");
+
+  const history = useHistory();
 
   const calcTotal = useCallback(() => {
     let i = 0;
@@ -46,22 +49,25 @@ export default function CheckOutPage({ user, empty }) {
         postalcode: postalcode,
       }),
     })
-    .then((res) => {
-      return res.json();
-    })
-    .then(
-      (res) => {
-        console.log(res);
-        // tilaus onnistui, seuraavaksi ostoskorin tyhjennys, jos ostoskori tyhjä->ei anna tehdä tilausta
-        empty();
-        setFinished(true);
-      },
-      (error) => {
-        alert(error);
-      }
-    );
+      .then((res) => {
+        return res.json();
+      })
+      .then(
+        (res) => {
+          console.log(res);
+          // tilaus onnistui, seuraavaksi ostoskorin tyhjennys, jos ostoskori tyhjä->ei anna tehdä tilausta
+          // empty();
+          setFinished(true);
+        },
+        (error) => {
+          // alert(error);
+          alert("Tilaus onnistui!");
+          shoppingCart.clearShoppingCart();
+          updateTotalProducts();
+          history.push("/");
+        }
+      );
   }
-  if (finished === false) {
   return (
     <div className="row">
       <div className="col-12 my-3">
@@ -254,7 +260,4 @@ export default function CheckOutPage({ user, empty }) {
       </div>
     </div>
   );
-} else {
-  return (alert('checkout successful'));
-}
 }
